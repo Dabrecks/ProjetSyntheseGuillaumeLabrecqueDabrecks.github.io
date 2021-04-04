@@ -19,7 +19,9 @@
           <li>Suspendisse tincidunt vulputate leo in sollicitudin</li>
           <li>Morbi sodales risus quis orci hendrerit semper</li>
         </ul>
-        <button>Publier une offre de stage maintenant!</button>
+        <router-link to="/Connexion">
+          <button>Publier une offre de stage maintenant!</button>
+        </router-link>  
       </b-col>
     </b-row>
   </div>

@@ -10,68 +10,7 @@
             </p>
           </b-col>
         </b-row>
-        <b-row>
-          <!-- carte 1 -->
-          <b-col>
-            <div class="sousCarte text-left">
-              <b-card title="Card title" sub-title="Card subtitle">
-                <b-card-text>
-                  Some quick example text to build on the and make up the bulk
-                  of the card's content.
-                </b-card-text>
-                <a href="#" class="cardLink">Détail</a>
-                <button class="bouttonCarte" href="#" variant="primary">
-                  Postuler
-                </button>
-              </b-card>
-            </div>
-          </b-col>
-          <!-- carte 2 -->
-          <b-col>
-            <div class="sousCarte text-left">
-              <b-card title="Card title" sub-title="Card subtitle">
-                <b-card-text>
-                  Some quick example text to build on the and make up the bulk
-                  of the card's content.
-                </b-card-text>
-                <a href="#" class="cardLink">Détail</a>
-                <button class="bouttonCarte" href="#" variant="primary">
-                  Postuler
-                </button>
-              </b-card>
-            </div>
-          </b-col>
-          <!-- carte 3 -->
-          <b-col>
-            <div class="sousCarte text-left">
-              <b-card title="Card title" sub-title="Card subtitle">
-                <b-card-text>
-                  Some quick example text to build on the and make up the bulk
-                  of the card's content.
-                </b-card-text>
-                <a href="#" class="cardLink">Détail</a>
-                <button class="bouttonCarte" href="#" variant="primary">
-                  Postuler
-                </button>
-              </b-card>
-            </div>
-          </b-col>
-          <!-- carte 4 -->
-          <b-col>
-            <div class="sousCarte text-left">
-              <b-card title="Card title" sub-title="Card subtitle">
-                <b-card-text>
-                  Some quick example text to build on the and make up the bulk
-                  of the card's content.
-                </b-card-text>
-                <a href="#" class="cardLink">Détail</a>
-                <button class="bouttonCarte" href="#" variant="primary">
-                  Postuler
-                </button>
-              </b-card>
-            </div>
-          </b-col>
-        </b-row>
+        <MiniCarteStage />
         <b-row>
           <b-col>
             <button>Afficher d'autres offres</button>
@@ -82,8 +21,12 @@
 </template>
 
 <script>
+import MiniCarteStage from './MiniCarteStage'
 export default {
     name: "CartesStage",
+    components: {
+    MiniCarteStage,
+  },
 }
 </script>
 

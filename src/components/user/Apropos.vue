@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header titreHeader="À propos"/>
     <!--Corp de la page  -->
     <div class="corp">
       <b-container fluid>

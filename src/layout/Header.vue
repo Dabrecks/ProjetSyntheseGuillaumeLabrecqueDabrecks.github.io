@@ -3,23 +3,31 @@
       <!-- NavBar -->
       <div>
         <b-navbar class=" navbar bg-transparent" toggleable="lg" variant="info">
-          <b-navbar-brand href="#">
-            <img class="logoImg" src="../assets/logoStage.png" />
-          </b-navbar-brand>
+           <router-link to="/">
+            <b-navbar-brand >
+              <img class="logoImg" src="../assets/logoStage.png" />
+            </b-navbar-brand>
+          </router-link>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
+              <router-link to="/OffreStages">
               <b-button class="bouton" variant="success"
                 >Trouvez votre stage</b-button
               >
+              </router-link> 
+              <router-link to="/OffreCandidats">
               <b-button class="bouton" variant="success"
                 >Trouvez votre future stagiaire</b-button
               >
+              </router-link>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
-              <b-button id="btnConnexion" class="bouton bg-white text-black"
-                >Connexion</b-button
-              >
+              <router-link to="/Connexion">
+                <b-button id="btnConnexion" class="bouton bg-white text-black"
+                  >Connexion</b-button
+                >
+              </router-link>  
               <b-button class="bouton text-black">Inscription</b-button>
             </b-navbar-nav>
           </b-collapse>
@@ -45,9 +53,9 @@
       </div>
       <div>
         <!-- Titre de la page -->
-        <b-container class="titre ">
+        <b-container class="titre ml-0 pl-0">
           <b-row>
-            <b-col class="textTitre text-white ">Candidats</b-col>
+            <b-col class="textTitre text-white "><p>{{ titreHeader }}</p></b-col>
           </b-row>
         </b-container>
       </div>
@@ -56,7 +64,8 @@
 
 <script>
 export default {
-    name: "Header",
+  name: "Header",
+  props: ['titreHeader'],
 }
 </script>
 
@@ -105,10 +114,10 @@ a.navbar-brand {
 .titre {
   display: flex;
   justify-content: start;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
-.textTitre {
+.textTitre p{
   font-size: 60px;
 }
 </style>

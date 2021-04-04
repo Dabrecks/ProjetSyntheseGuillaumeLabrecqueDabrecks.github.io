@@ -50,11 +50,21 @@
       </b-col>
       <b-col class="basPageDroite">
         <ul class="basPageListe">
-          <li class="basPageElement"><a href="#">Accueil</a></li>
-          <li class="basPageElement"><a href="#">À propos</a></li>
-          <li class="basPageElement"><a href="#">Confidentialité</a></li>
-          <li class="basPageElement"><a href="#">Nous joindre</a></li>
-          <li class="basPageElement"><a href="#">Partenaires</a></li>
+          <router-link to="/">
+            <li class="basPageElement"><a href="#">Accueil</a></li>
+          </router-link> 
+          <router-link to="/Apropos">
+            <li class="basPageElement"><a href="#">À propos</a></li>
+          </router-link>  
+          <router-link to="/Confidentialite">
+            <li class="basPageElement"><a href="#">Confidentialité</a></li>
+          </router-link>
+          <router-link to="/Joindre">
+            <li class="basPageElement"><a href="#">Nous joindre</a></li>
+          </router-link>   
+          <router-link to="/Partenaires">
+            <li class="basPageElement"><a href="#">Partenaires</a></li>
+          </router-link>
         </ul>
       </b-col>
     </b-row>

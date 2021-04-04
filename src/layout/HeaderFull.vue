@@ -3,23 +3,31 @@
       <!-- NavBar -->
       <div>
         <b-navbar class=" navbar bg-transparent" toggleable="lg" variant="info">
-          <b-navbar-brand href="#">
-            <img class="logoImg" src="../assets/logoStage.png" />
-          </b-navbar-brand>
+          <router-link to="/">  
+            <b-navbar-brand href="#">
+              <img class="logoImg" src="../assets/logoStage.png" />
+            </b-navbar-brand>
+          </router-link>  
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-              <b-button class="bouton" variant="success"
-                >Trouvez votre stage</b-button
-              >
+              <router-link to="/OffreStages">
+                <b-button class="bouton" variant="success">
+                  Trouvez votre stage
+                </b-button>
+              </router-link> 
+              <router-link to="/OffreCandidats">
               <b-button class="bouton" variant="success"
                 >Trouvez votre future stagiaire</b-button
               >
+              </router-link>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
-              <b-button id="btnConnexion" class="bouton bg-white text-black"
-                >Connexion</b-button
-              >
+              <router-link to="/Connexion">
+                <b-button id="btnConnexion" class="bouton bg-white text-black"
+                  >Connexion
+                </b-button>
+              </router-link>  
               <b-button class="bouton text-black">Inscription</b-button>
             </b-navbar-nav>
           </b-collapse>

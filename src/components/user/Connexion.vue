@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Header />
+    <Header titreHeader="Connexion"/>
     <b-container fluid>
       <div class="corp">
         <b-row class="formulaire">
           <b-col cols="5" class="identification">
             <b-row class="titreFormulaire">
-              <h1>Identification</h1>
+              <h1 class="pl-0">Identification</h1>
             </b-row>
             <b-row class="text-left">
               <div>
@@ -56,7 +56,7 @@
           <!-- Section de droite Nouvel utilisateur -->
           <b-col cols="7" class="nouvelUtilisateur text-left">
             <b-row class="titreFormulaire">
-              <h1>Nouvel utilisateur</h1>
+              <h1 class="pl-0">Nouvel utilisateur</h1>
             </b-row>
             <b-row class="text-left">
               <h4>Validation</h4>
@@ -235,7 +235,7 @@ export default {
     Header,
     Footer,
   },
-  name: "RechercheStage",
+  name: "Connexion",
   data() {
     return {
       form: {
@@ -350,6 +350,7 @@ export default {
     background-color: grey;
     p {
       font-size: 1.5rem;
+      color: whitesmoke;
       font-weight: bold;
       padding: 21% 15%;
       margin: 0;

@@ -2,7 +2,7 @@
   <div class="sectionCentre">
     <b-row>
       <b-col cols="6" class="centralText text-left">
-        <h1 class="centreTitre">Pourquoi publier<br />une offre de stage?</h1>
+        <h1 class="centreTitre">Pourquoi publier<br />une demande de stage?</h1>
         <p class="centreText">
           Pellentesque vehicula fermentum turpis eu cursus. Cras convallis
           tellus <br />et elit aliquet, vitae dignissim ligula sodales.
@@ -12,7 +12,9 @@
           <li>Suspendisse tincidunt vulputate leo in sollicitudin</li>
           <li>Morbi sodales risus quis orci hendrerit semper</li>
         </ul>
-        <button>Publier une offre de stage maintenant!</button>
+        <router-link to="/Connexion">
+          <button>Publier une demande de stage maintenant!</button>
+        </router-link>
       </b-col>
       <b-col cols="6" class="centralImg">
         <b-img

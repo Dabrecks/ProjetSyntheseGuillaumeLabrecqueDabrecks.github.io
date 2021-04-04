@@ -4,18 +4,21 @@
     <!-- corp de la page -->
     <div class="corp">
       <b-container fluid class="listeStage">
-        <b-row>
+        <b-row >
           <!-- section des deux petites cartes -->
           <b-col class="sectionStage" cols="8">
             <b-row class="stage">
+              <!-- <p>{{ $route.params.id }}</p> -->
               <b-col cols="4" class="logoStage">
                 <h1>logo</h1>
               </b-col>
               <b-col cols="8"  class="descriptionStage">
-                <b-row class="titreDescriptionStage text-left">
+                <b-row v-for="(data,index) in stages" :key="index" class="titreDescriptionStage text-left">
+                  <div v-if="staId == stages.stageId">
                     <b-col cols="12">
-                        <h1>Développeur Front-End</h1>
+                        <h1>{{ data.ville }}</h1>
                     </b-col>
+                  </div>
                 </b-row>
                 <b-row class="listeDescriptionStage mb-4">
                     <b-col cols="6" class="listeGauche text-left mt-3">
@@ -130,8 +133,10 @@ import Header from '../../layout/Header'
 import SectionPleineLargeur from '../../layout/SectionPleineLargeur'
 import SectionPleineLargeurI from '../../layout/SectionPleineLargeurI'
 import CartesStage from '../../layout/CartesStage'
+import json from "../../assets/data.json";
 export default {
-  name: "OffreStage",
+  name: "Stage",
+  props:["infoStage"],
   components: {
     Footer,
     Header,
@@ -141,6 +146,8 @@ export default {
   },
   data() {
     return {
+      staId: this.$route.params.Sid, // aller chercher l'id de la carte
+      stages: json.stages, // Aller chercher les données JSON
       secteurs: [
         { domaine: "Administration publiques" },
         { domaine: "Agriculture, foresterie, pêche et chasse" },
