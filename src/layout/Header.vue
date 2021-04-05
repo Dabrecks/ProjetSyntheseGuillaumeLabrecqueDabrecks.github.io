@@ -42,9 +42,9 @@
             >
             <b-col cols="12">
               <b-input-group>
-                <b-form-input placeholder="Mot clés"></b-form-input>
+                <b-form-input v-model="search" placeholder="Mot clés"></b-form-input>
                 <b-input-group-append>
-                  <b-button variant="info">Rechercher</b-button>
+                  <b-button @click="addFilter(search)" variant="info">Rechercher</b-button>
                 </b-input-group-append>
               </b-input-group>
             </b-col>
@@ -56,6 +56,8 @@
         <b-container class="titre ml-0 pl-0">
           <b-row>
             <b-col class="textTitre text-white "><p>{{ titreHeader }}</p></b-col>
+            <!-- test pour être certain que j'ai bien la valeur du Search -->
+            <!-- <b-col class="textTitre text-white "><p>{{ search }}</p></b-col> -->
           </b-row>
         </b-container>
       </div>
@@ -66,6 +68,17 @@
 export default {
   name: "Header",
   props: ['titreHeader'],
+  data() {
+    return {
+      search:""
+    }
+  },
+  // Retourner la valeur du search vers le parent OffreStages
+  methods: {
+    addFilter(search) {
+      this.$emit('update-search', search)
+    }
+  }
 }
 </script>
 

@@ -1,27 +1,30 @@
 <template>
   <div>
       <!-- Looper dans mes stages -->
-    <b-row
+      <b-row v-for="stage in stages" :key="stage.stageId" class="carteSection text-left m-0 mb-4">
+      <!-- AVEC CETTE VERSION DU BAS DU V-FOR, JE PEUX AVOIR MON id DANS MON URL -->
+    <!--<b-row
       v-for="(data,index) in stages"
       :key="index"
       class="carteSection text-left m-0 mb-4"
-      ><!-- Changer le stage in stages pour stage in sortedStage -->
+      > Changer le stage in stages pour stage in sortedStage -->
       <b-col cols="8">
         <h4 class="titreCarte">
-          <span>{{ data.entreprise }}</span>
+            <!-- <p>{{filtre}}</p>*********Test pour voir si le fitre passe -->
+          <span>{{ stage.entreprise }}</span>
         </h4>
         <p class="lieuCarte">
-          <span>{{ data.ville }}</span>
+          <span>{{ stage.ville }}</span>
         </p>
         <p class="DomaineCarte">
-          <span>{{ data.secteur }}</span>
+          <span>{{ stage.secteur }}</span>
         </p>
         <p class="DescriptionCarte">
-          <span>{{ data.description }}</span>
+          <span>{{ stage.description }}</span>
         </p>
         <b-button class="boutonCarte" variant="primary">Contacter</b-button>
         <!-- <router-link to="/Stage"> -->
-            <b-button  @click="goTodetail(data.stageId)" class="boutonCarte" variant="primary">Détail</b-button>
+            <b-button  @click="goTodetail(stage.stageId)" class="boutonCarte" variant="primary">Détail</b-button>
         <!-- </router-link>  -->
       </b-col>
       <b-col cols="4 p-0" class="logoCarte">
@@ -40,17 +43,30 @@
 import json from "../assets/data.json";
 export default { 
   name: "CarteStagiaire",
+  props: {
+      filtre: [String, Object] //Ici c'est mon mot d'inscrit dans la searchBar de mon header
+  },
   data: function() {
     return {
       stages: json.stages, // Aller chercher les données JSON
+      motFiltre:this.filtre
     };
   },
+    //Pour faire suivre les détails vers la fiche détaillé   
     methods:{
         goTodetail(stagId) {
             let staId=stagId
             this.$router.push({name:'Stage', params:{Sid:staId}})
         }
-    }    
+    },  
+    // pour filtrer 
+    computed: {
+        stageFiltre: function(){
+            return this.data.filter((stages)=>{
+                return stages.poste.match(this.filtre)
+            })
+        }
+    }  
 };
 </script>
 

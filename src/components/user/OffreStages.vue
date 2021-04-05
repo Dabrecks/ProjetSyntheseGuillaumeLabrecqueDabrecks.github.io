@@ -1,13 +1,17 @@
 <template>
   <div>
-    <Header titreHeader="Stages"/>
+    <Header titreHeader="Stages" @update-search="updateSearch($event)"/>
     <!-- SECTION 1 --------------------------------------------->
+    <!--TEST POUR VOIR SI LE SEARCH APPARAIT DANS MON COMPONENT PARENT.-->
+    <div>   
+      <p>{{search}}</p>
+    </div>
     <div class="corp">
       <b-container fluid class="listeCandidats">
         <b-row >
           <!-- section carte avec les candidats -->
           <b-col class="candidats p-0" cols="7">
-            <CarteStage />
+            <CarteStage :filtre="search"/><!--Je dois passer ma variable "search ici"-->
           </b-col>
 
           <b-col class="secteur text-left" cols="4" offset="1">
@@ -58,6 +62,7 @@ export default {
   },
   data() {
     return {
+      search:"",
       secteurs: [
         { domaine: "Administration publiques" },
         { domaine: "Agriculture, foresterie, pêche et chasse" },
@@ -87,6 +92,12 @@ export default {
       ],
     };
   },
+  // aller chercher mon mot dans ma searchBar
+  methods: {
+    updateSearch: function(updatedSearch){
+      this.search = updatedSearch
+    }
+  }
 };
 </script>
 
