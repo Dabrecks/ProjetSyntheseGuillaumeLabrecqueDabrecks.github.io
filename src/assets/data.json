@@ -2,6 +2,8 @@
     "candidats": [
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true, 
             "candidatId": 1, 
             "position": "Développeur Web", 
             "img": "assets/Limoilou.png", 
@@ -18,6 +20,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "candidatId": 2, 
             "position": "Administration publiques", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -34,6 +38,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 3, 
             "position": "Construction", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -50,6 +56,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "candidatId": 4, 
             "position": "Développeur Web", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -66,6 +74,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 5, 
             "position": "Fabrication", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -82,6 +92,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "candidatId": 6, 
             "position": "Finance et assurances", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -98,6 +110,8 @@
         },
         {
             "vedette": false, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 7, 
             "position": "Services d’enseignement", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -114,6 +128,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "candidatId": 8, 
             "position": "Services publics", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -130,6 +146,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 9, 
             "position": "Transport et entreposage", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -146,6 +164,8 @@
         },
         {
             "vedette": false, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 10, 
             "position": "Développeur Web", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -162,6 +182,8 @@
         },
         {
             "vedette": false, 
+            "valide": true, 
+            "visible": true,
             "candidatId": 11, 
             "position": "Transport par camion", 
             "img": "https://www.capres.ca/wp-content/uploads/2017/03/Ce%CC%81gep_Limoilou.png", 
@@ -180,6 +202,8 @@
       "stages": [
         {
             "vedette": true,
+            "valide": true, 
+            "visible": true,
             "stageId": 1, 
             "publication": "2021-03-31", 
             "poste": "Développeur Web", 
@@ -196,6 +220,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "stageId": 2, 
             "publication": "2021-04-03", 
             "poste": "Charpentier", 
@@ -212,6 +238,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "stageId": 3, 
             "publication": "2021-02-21", 
             "poste": "Enseignant primaire", 
@@ -228,6 +256,8 @@
         },
         {
             "vedette": false, 
+            "valide": false, 
+            "visible": true,
             "stageId": 4, 
             "publication": "2021-03-15", 
             "poste": "Développeur Web", 
@@ -244,6 +274,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "stageId": 5, 
             "publication": "2021-01-15", 
             "poste": "Développeur Web", 
@@ -260,6 +292,8 @@
         },
         {
             "vedette": true, 
+            "valide": true, 
+            "visible": true,
             "stageId": 6, 
             "publication": "2021-03-01", 
             "poste": "Comptable", 

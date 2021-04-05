@@ -1,6 +1,6 @@
 <template>
 <div>
-  <b-row v-for="candidat in candidats" :key="candidat.nom" class="carteSection text-left m-0 mb-4"><!-- v-for="candidat in candidats" :key="candidat.nom" -->
+  <b-row v-for="candidat in candidatValide" :key="candidat.nom" class="carteSection text-left m-0 mb-4"><!-- v-for="candidat in candidats" :key="candidat.nom" -->
       <b-col cols="8">
         <h4 class="titreCarte"><span>{{ candidat.position }}</span></h4>
         <p class="lieuCarte"><span>{{ candidat.ville }}</span></p>
@@ -30,6 +30,12 @@ export default {
       candidats: json.candidats, // passing array data into Vue
     };
   },
+  // Aller chercher que mes candidats valides
+  computed: {
+    candidatValide: function(){
+      return this.candidats.filter(candidat => candidat.valide)
+    }
+  }
 };
 </script>
 

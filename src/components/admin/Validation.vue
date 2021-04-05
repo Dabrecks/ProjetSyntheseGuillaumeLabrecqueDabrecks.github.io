@@ -23,8 +23,8 @@
             <!-- Section principale -->
             <b-row class="rowCartes">
               <b-col class="pl-0" cols="6">
-                <div>
-                  <b-card class="carteDemande">
+                <div v-for="candidat in candidatNonValide" :key="candidat.nom"> 
+                  <b-card class="carteDemande"> <!--v-show="isShowing"-->
                     <b-row>
                       <font-awesome-icon
                         class="iconeCarte"
@@ -32,23 +32,21 @@
                         size="3x"
                       />
                       <b-card-text class="title pl-0 pb-0 mb-0"
-                        >Développeur Web</b-card-text
+                        >{{ candidat.position }}</b-card-text
                       >
                     </b-row>
                     <hr />
                     <b-card-text class="subTitle p-0 "
-                      >Jean-Sébastien Tremblay</b-card-text
+                      >{{ candidat.nom }}</b-card-text
                     >
                     <b-card-text class="carteVille p-0 mb-1">
-                      Ville : Trois-Rivières
+                      Ville : <span>{{ candidat.ville }}</span>
                     </b-card-text>
                     <b-card-text class="carteLieu pl-0 mb-0">
-                      Établissement scolaire : Cégep de Trois-Rivières
+                      Établissement scolaire : <span>{{ candidat.etablissement }}</span>
                     </b-card-text>
                     <b-card-text class="carteDescription pl-0">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut laborelitr, sed
-                      diam nonumy eirmod tempor invidunt...
+                      <span>{{ candidat.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
                       <b-col>
@@ -56,12 +54,12 @@
                           >Primary</b-button
                         >
                       </b-col>
-                      <b-col class="text-right">
+                      <b-col class="text-right"><!-- @click="isShowing = false"-->
                         <b-button class=" m-1" variant="danger"
                           >Danger</b-button
                         >
-                        <b-button class=" m-1" variant="success"
-                          >Success</b-button
+                        <b-button v-on:click="candidat.valide = !candidat.valide" class=" m-1" variant="success"
+                          >valider</b-button
                         >
                       </b-col>
                     </b-row>
@@ -70,7 +68,7 @@
               </b-col>
 
               <b-col cols="6">
-                <div>
+                <div v-for="stage in stageNonValide" :key="stage.stageId">
                   <b-card class="carteDemande">
                     <b-row>
                       <font-awesome-icon
@@ -79,23 +77,21 @@
                         size="3x"
                       />
                       <b-card-text class="title pl-0 pb-0 mb-0"
-                        >Développeur Web</b-card-text
+                        >{{ stage.poste }}</b-card-text
                       >
                     </b-row>
                     <hr />
                     <b-card-text class="subTitle p-0 "
-                      >Jean-Sébastien Tremblay</b-card-text
+                      >{{ stage.poste }}</b-card-text
                     >
                     <b-card-text class="carteVille p-0 mb-1">
-                      Ville : Trois-Rivières
+                      Ville : <span>{{ stage.ville }}</span>
                     </b-card-text>
                     <b-card-text class="carteLieu pl-0 mb-0">
-                      Établissement scolaire : Cégep de Trois-Rivières
+                      Entreprise : <span>{{ stage.entreprise }}</span>
                     </b-card-text>
                     <b-card-text class="carteDescription pl-0">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut laborelitr, sed
-                      diam nonumy eirmod tempor invidunt...
+                      <span>{{ stage.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
                       <b-col>
@@ -104,11 +100,12 @@
                         >
                       </b-col>
                       <b-col class="text-right">
-                        <b-button class=" m-1" variant="danger"
-                          >Danger</b-button
+                        <b-button v-on:click="stage.visible = !stage.visible" class=" m-1" variant="danger"
+                          >Retirer</b-button
                         >
-                        <b-button class=" m-1" variant="success"
-                          >Success</b-button
+                        <!-- Changer la valeur de valide -->
+                        <b-button v-on:click="stage.valide = !stage.valide" class=" m-1" variant="success"
+                          >valider</b-button
                         >
                       </b-col>
                     </b-row>
@@ -126,12 +123,30 @@
 <script>
 import SideNav from "../../layout/SideNav";
 import SmallTopNav from "../../layout/SmallTopNav";
+import json from "../../assets/data.json";
 export default {
   name: "Validation",
   components: {
     SideNav,
     SmallTopNav,
   },
+  data: function() {
+    return {
+      // isShowing:true,
+      candidats: json.candidats, // Passer les infos du candidats depuis le fichier JSON
+      stages: json.stages, // Passer les infos du candidats depuis le fichier JSON
+    };
+  },
+  // Aller chercher les candidats qui sont à valider
+  computed: {
+    candidatNonValide: function(){
+      return this.candidats.filter(candidat => !candidat.valide)
+    },
+    // Aller chercher les stages qui sont à valider
+    stageNonValide: function(){
+      return this.stages.filter(stage => !stage.valide)
+    }
+  }
 };
 </script>
 

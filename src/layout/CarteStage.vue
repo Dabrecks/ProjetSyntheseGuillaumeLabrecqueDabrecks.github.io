@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- Looper dans mes stages -->
-      <b-row v-for="stage in stages" :key="stage.stageId" class="carteSection text-left m-0 mb-4">
+      <b-row v-for="stage in stageValide" :key="stage.stageId" class="carteSection text-left m-0 mb-4">
       <!-- AVEC CETTE VERSION DU BAS DU V-FOR, JE PEUX AVOIR MON id DANS MON URL -->
     <!--<b-row
       v-for="(data,index) in stages"
@@ -62,9 +62,13 @@ export default {
     // pour filtrer 
     computed: {
         stageFiltre: function(){
-            return this.data.filter((stages)=>{
-                return stages.poste.match(this.filtre)
-            })
+          return this.data.filter((stages)=>{
+            return stages.poste.match(this.filtre)
+          })
+        },
+        // Aller chercher que mes stages valides
+        stageValide: function(){
+          return this.stages.filter(stage => stage.valide)
         }
     }  
 };

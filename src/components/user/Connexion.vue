@@ -10,12 +10,12 @@
             </b-row>
             <b-row class="text-left">
               <div>
-                <b-form @submit="onSubmit" v-if="show">
+                <b-form > <!--@submit="onSubmit" v-if="show"-->
                   <b-form-group
                     id="input-group-1"
                     label="Courriel:"
                     label-for="input-1"
-                    description="We'll never share your email with anyone else."
+                    description="Vos informations ne seront jamais partagées"
                   >
                     <b-form-input
                       id="input-1"
@@ -33,22 +33,22 @@
                   >
                     <b-form-input
                       id="input-2"
-                      v-model="form.nom"
+                      v-model="form.password"
                       type="password"
-                      placeholder="Entrer nom"
+                      placeholder="Entrer le mot de passe"
                       required
                     ></b-form-input>
                   </b-form-group>
-                  <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
+                  <!-- <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
                     <b-form-checkbox-group
                       v-model="form.checked"
                       id="checkboxes-3"
                       :aria-describedby="ariaDescribedby"
                     >
                       <b-form-checkbox value="me">Check me out</b-form-checkbox>
-                    </b-form-checkbox-group>
-                  </b-form-group>
-                  <b-button type="submit" variant="primary">Submit</b-button>
+                    </b-form-checkbox-group> 
+                  </b-form-group>-->
+                  <b-button type="submit" variant="primary" v-on:click="login()">Submit</b-button>
                 </b-form>
               </div>
             </b-row>
@@ -240,8 +240,8 @@ export default {
     return {
       form: {
         courriel: "",
-        nom: "",
-        checked: [],
+        password: "",
+        // checked: [],
       },
       regions: [
         { text: "Choisir", value: null },
@@ -306,11 +306,24 @@ export default {
     };
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-  },
+    // onSubmit(event) {
+    //   event.preventDefault();
+    //   alert(JSON.stringify(this.form));
+    // },
+  //},
+  //Gestion des événements, si l'utilisateur entre rien, une alerte doit apparaitre, 
+  //s'il entre les bonnes informations, il aura accès à la section ADMIN, ou sera simplement logué.  
+  
+    login() {
+      if (this.form.courriel === "admin@amin.com" && this.form.password === "admin123") { //&& this.input.password == "admin123"
+        this.$emit("authenticated", true);
+        this.$router.replace({ name: "Validation" });//Si le nom d'usager est bon je retourne au profil.
+      } else {
+          //this.$router.replace({ name: "Acceuil" });Si le nom d'usager n'est pas le bon je retourne à l'acceuil.
+          alert("nom d'utilisateur incorrect");
+      }      
+    }
+  }
 };
 </script>
 
