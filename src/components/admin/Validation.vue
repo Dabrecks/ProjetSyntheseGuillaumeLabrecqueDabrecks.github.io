@@ -23,7 +23,7 @@
             <!-- Section principale -->
             <b-row class="rowCartes">
               <b-col class="pl-0" cols="6">
-                <div v-for="candidat in candidatNonValide" :key="candidat.nom"> 
+                <div v-for="candidat, index in candidatNonValide" :key="index"> 
                   <b-card class="carteDemande"> <!--v-show="isShowing"-->
                     <b-row>
                       <font-awesome-icon
@@ -55,11 +55,11 @@
                         >
                       </b-col>
                       <b-col class="text-right"><!-- @click="isShowing = false"-->
-                        <b-button class=" m-1" variant="danger"
-                          >Danger</b-button
+                        <b-button v-on:click="supprimerCandidat(index)" class=" m-1" variant="danger"
+                          >Supprimer</b-button
                         >
                         <b-button v-on:click="candidat.valide = !candidat.valide" class=" m-1" variant="success"
-                          >valider</b-button
+                          >Valider</b-button
                         >
                       </b-col>
                     </b-row>
@@ -68,7 +68,7 @@
               </b-col>
 
               <b-col cols="6">
-                <div v-for="stage in stageNonValide" :key="stage.stageId">
+                <div v-for="stage, index in stageNonValide" :key="index">
                   <b-card class="carteDemande">
                     <b-row>
                       <font-awesome-icon
@@ -100,12 +100,13 @@
                         >
                       </b-col>
                       <b-col class="text-right">
-                        <b-button v-on:click="stage.visible = !stage.visible" class=" m-1" variant="danger"
-                          >Retirer</b-button
+                        <!-- Pour supprimer -->
+                        <b-button v-on:click="supprimerStage(index)" class=" m-1" variant="danger"
+                          >Supprimer</b-button
                         >
                         <!-- Changer la valeur de valide -->
                         <b-button v-on:click="stage.valide = !stage.valide" class=" m-1" variant="success"
-                          >valider</b-button
+                          >Valider</b-button
                         >
                       </b-col>
                     </b-row>
@@ -132,10 +133,20 @@ export default {
   },
   data: function() {
     return {
-      // isShowing:true,
-      candidats: json.candidats, // Passer les infos du candidats depuis le fichier JSON
-      stages: json.stages, // Passer les infos du candidats depuis le fichier JSON
+      // Aller chercher les données pour candidats et stages
+      candidats: json.candidats, 
+      stages: json.stages, 
     };
+  },
+  // Pour supprimer le candidats
+  methods: {
+    supprimerCandidat (index) {
+      this.$delete(this.candidats, index)
+    },
+    // Pour supprimer le stages
+    supprimerStage (index) {
+      this.$delete(this.stages, index)
+    }  
   },
   // Aller chercher les candidats qui sont à valider
   computed: {

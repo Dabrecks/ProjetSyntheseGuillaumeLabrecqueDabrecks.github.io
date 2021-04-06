@@ -16,7 +16,7 @@
       </b-col>
       <b-col cols="1" class="iconsNavTop text-right">
         <font-awesome-icon class="iconeCarte" icon="bell" size="lg" />
-        <router-link to="/OffreStages">
+        <router-link to="/">
           <font-awesome-icon class="iconeCarte" icon="sign-out-alt" size="lg" />
         </router-link> 
       </b-col>
