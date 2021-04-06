@@ -7,12 +7,24 @@
     </b-row>
     <b-row m-0 p-0>
       <b-col cols="12" class="sideliste text-left m-0 mb-5 p-0">
-        <a href="#"><font-awesome-icon class="iconeCarte" icon="home" size="lg"/><span>Accueil</span></a>
-        <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-right" size="lg"/><span>Offres de stage</span></a>
-        <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-left" size="lg"/><span>Demandes de stage</span></a>
-        <a href="#"><font-awesome-icon class="iconeCarte" icon="user-graduate" size="lg"/><span>Candidats</span></a>
-        <a href="#"><font-awesome-icon class="iconeCarte" icon="user-tie" size="lg"/><span>Entreprises</span></a>
-        <a href="#" class="mt-5"><font-awesome-icon class="iconeCarte" icon="sign-out-alt" size="lg"/><span>Déconnexion</span></a>
+        <router-link to="/">
+          <a href="#"><font-awesome-icon class="iconeCarte" icon="home" size="lg"/><span>Accueil</span></a>
+        </router-link> 
+        <router-link to="/DemandesStage">
+          <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-right" size="lg"/><span>Offres de stage</span></a>
+        </router-link>  
+          <router-link to="/FicheCandidat">
+          <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-left" size="lg"/><span>Demandes de stage</span></a>
+        </router-link>  
+          <router-link to="/ListeCandidats">
+          <a href="#"><font-awesome-icon class="iconeCarte" icon="user-graduate" size="lg"/><span>Candidats</span></a>
+        </router-link>  
+          <router-link to="/ListeStages">
+          <a href="#"><font-awesome-icon class="iconeCarte" icon="user-tie" size="lg"/><span>Entreprises</span></a>
+        </router-link>  
+        <router-link to="/">
+          <a href="#" class="mt-5"><font-awesome-icon class="iconeCarte" icon="sign-out-alt" size="lg"/><span>Déconnexion</span></a>
+        </router-link>
       </b-col>
     </b-row>
   </div>

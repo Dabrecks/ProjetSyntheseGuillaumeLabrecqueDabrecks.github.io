@@ -13,6 +13,7 @@ import Partenaires from '../components/user/Partenaires.vue'
 import DemandesStage from '../components/admin/DemandesStage.vue'
 import FicheCandidat from '../components/admin/FicheCandidat.vue'
 import ListeCandidats from '../components/admin/ListeCandidats.vue'
+import ListeStages from '../components/admin/ListeStages.vue'
 import Validation from '../components/admin/Validation.vue'
 
 
@@ -83,6 +84,11 @@ const routes = [
     path: '/ListeCandidats',
     name: 'ListeCandidats',
     component: ListeCandidats
+  },
+  {
+    path: '/ListeStages',
+    name: 'ListeStages',
+    component: ListeStages
   },
   {
     path: '/Validation',

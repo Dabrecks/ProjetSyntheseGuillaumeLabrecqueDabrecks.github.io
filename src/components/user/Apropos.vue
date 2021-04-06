@@ -8,8 +8,8 @@
           <b-col cols="4" class="intro p-0"
             ><img class="logoImgBig" src="../../assets/logoStage.png"
           /></b-col>
-          <b-col cols="7" class="intro text-left p-0 mb-0"
-            ><p class="align-bottom">
+          <b-col cols="7" class="introText text-left p-0 mb-0"
+            ><p class="mb-0">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequuntur ratione, nobis deserunt ipsa rem dolor magnam, quam
               tenetur perspiciatis veritatis quidem obcaecati asperiores
@@ -21,10 +21,10 @@
           >
         </b-row>
         <b-row class="cardIntroRow">
-          <b-col class="cardIntro">
+          <b-col class="cardIntro text-center">
             <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
+              title="FORCE A VENIR"
+              img-src="https://image.freepik.com/free-photo/multi-ethnic-group-young-men-women-studying-indoors_1139-989.jpg"
               img-alt="Image"
               img-top
               tag="article"
@@ -32,15 +32,14 @@
               class="mb-2"
             >
               <b-card-text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
           <b-col class="cardIntro">
             <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
+              title="CENTRAIDE"
+              img-src="https://image.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15872.jpg"
               img-alt="Image"
               img-top
               tag="article"
@@ -48,15 +47,14 @@
               class="mb-2"
             >
               <b-card-text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
           <b-col class="cardIntro">
             <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
+              title="FONDATION"
+              img-src="https://image.freepik.com/free-photo/strength-people-hands-success-meeting_1150-1690.jpg"
               img-alt="Image"
               img-top
               tag="article"
@@ -64,8 +62,7 @@
               class="mb-2"
             >
               <b-card-text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
@@ -75,8 +72,8 @@
       <b-container fluid class="descriptionSection">
         <b-row>
           <b-col class="descriptifBleu text-left">
-            <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
-            <p>
+            <h4 class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+            <p class="mb-0">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ab
               in adipisci natus libero voluptatum animi neque aliquam delectus,
               totam nam dolore temporibus perspiciatis eligendi vel doloremque
@@ -93,7 +90,7 @@
             <b-img class="descriptifImg" src="https://picsum.photos/600/300/?image=25" alt="img"></b-img>
           </b-col>
           <b-col class="descriptifGris text-left"
-            ><p>
+            ><p class="mb-0">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Voluptates tempore est totam sed amet harum consequatur
               repudiandae modi maxime corporis pariatur veniam nihil, eum
@@ -134,20 +131,32 @@ export default {
   margin: 1%;
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: center;
 }
+
+.introText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-weight: bold;
+    }
+  }
 // ici c'est le logo dans le corp de la page.
 .logoImgBig {
   height: 150px;
 }
 
 .cardIntroRow {
+  height: auto;
   margin-bottom: 5%;
 }
 
 .cardIntro {
-  margin: 1%;
-  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: none;
 }
 // section de description
 .descriptionSection {
@@ -155,14 +164,22 @@ export default {
 }
 
 .descriptifBleu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   background-color: rgb(71, 71, 209);
-  padding: 75px 45px ;
+  padding: 100px 70px ;
   color: white;
 }
 .descriptifImg {
   width: 100%;
 }
 .descriptifGris {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   background-color: gray;
   padding: 120px 30px !important;
   color: white;
