@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Header titreHeader="Candidats"/>
+    <Header titreHeader="Candidats" @update-search="updateSearch($event)"/>
     <div class="corp">
       <b-container fluid class="listeCandidats">
         <b-row>
           <!-- section carte avec les candidats -->
           <b-col class="candidats p-0" cols="7">
-            <CarteStagiaire />
+            <CarteStagiaire :filtre="search"/><!--Je dois passer ma variable "search ici"-->
           </b-col>
           <b-col class="secteur text-left" cols="4" offset="1">
             <table>
@@ -85,6 +85,11 @@ export default {
       ],
     };
   },
+  methods: {
+    updateSearch: function(updatedSearch){
+      this.search = updatedSearch
+    }
+  }
 };
 </script>
 

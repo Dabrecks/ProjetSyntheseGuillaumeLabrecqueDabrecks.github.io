@@ -8,37 +8,39 @@
         <b-row class="formulaireCourriel text-left ml-1">
           <b-form>
             <b-form-group
-              id="input-group-1"
-              label="Email address:"
-              label-for="input-1"
-              description="We'll never share your email with anyone else."
+              id="input-email"
+              v-model="email"
+              label="Adresse courriel:"
+              label-for="inputEmailJoindre"
             >
               <b-form-input
-                id="input-1"
+                id="inputEmailJoindre"
                 type="email"
-                placeholder="Enter email"
+                placeholder="Entrer votre courriel"
                 required
               ></b-form-input>
             </b-form-group>
 
-            <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+            <b-form-group id="input-nom" label="Votre nom:" label-for="inputNomJoindre">
               <b-form-input
-                id="input-2"
-                placeholder="Enter name"
+                id="inputNomJoindre"
+                v-model="nom"
+                placeholder="Entrer votre nom"
                 required
               ></b-form-input>
             </b-form-group>
 
             <div>
               <b-form-textarea
+                v-model="message"
                 id="textarea-rows"
-                placeholder="Tall textarea"
+                placeholder="Votre message"
                 rows="8"
               ></b-form-textarea>
             </div>
 
-
-            <b-button class="mt-3" type="submit" variant="primary">Submit</b-button>
+            <!-- Envoyer un message alerte dans ce cas -->
+            <b-button v-on:click="merci" class="mt-3" type="submit" variant="primary">Envoyer</b-button>
           </b-form>
         </b-row>
       </b-container>  
@@ -53,9 +55,28 @@ export default {
 name: "Joindre",
    components: {
     Footer,
-    Header
+    Header,
+   },
+    data()  {
+      // je prends les information du la personne
+      return {
+      email:"",
+      nom: "",
+      message:""
+
+      }
+    },
+    // Ma méthode pour déclancher l'alerte et donner un message personnalisé
+    methods: {
+      merci: function (event) {
+        alert('Merci ' + this.nom + ', nous vous répondront dans les plus bref délais')
+          if (event) {
+        alert(event.target.tagName)
+      }
+    }
   }
-}
+
+  }
 </script>
 
 <style lang="scss">

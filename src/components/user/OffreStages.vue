@@ -2,10 +2,9 @@
   <div>
     <Header titreHeader="Stages" @update-search="updateSearch($event)"/>
     <!-- SECTION 1 --------------------------------------------->
-    <!--TEST POUR VOIR SI LE SEARCH APPARAIT DANS MON COMPONENT PARENT.-->
-    <div>   
-      <p>{{search}}</p>
-    </div>
+    <!-- <div>    -->
+      <!-- <p>{{search}}</p>Test pour passer mon mot de la searchBar -->
+    <!-- </div> -->
     <div class="corp">
       <b-container fluid class="listeCandidats">
         <b-row >

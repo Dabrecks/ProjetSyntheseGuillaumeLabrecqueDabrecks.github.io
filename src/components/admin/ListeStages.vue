@@ -12,9 +12,10 @@
               <h1>Liste des candidats</h1>
             </b-row>
             <b-row class="listMiniCartes">
-              <b-col class="miniCarte m-2">
+              
+              <b-col v-for="stage, index in stages" :key="index" cols="4" class="miniCarte">
                 <b-row class="nomMiniCarte">
-                  <p>John Doe</p>  
+                  <p>{{ stage.entreprise }}</p>  
                 </b-row>
                 <b-row class="institutionMiniCarte">
                   <p>Cégep de Trois-Rivières</p>  
@@ -41,64 +42,7 @@
               </button>
                 </b-row> 
               </b-col>
-              <b-col class="miniCarte m-2">
-                <b-row class="nomMiniCarte">
-                  <p>John Doe</p>  
-                </b-row>
-                <b-row class="institutionMiniCarte">
-                  <p>Cégep de Trois-Rivières</p>  
-                </b-row>
-                <b-row class="villeMiniCarte">
-                  <p>Shawinigan</p>
-                </b-row> 
-                <b-row class="bouttonMiniCarte">
-                  <button>
-                <font-awesome-icon
-                  id="editIcon"
-                  class="iconeCarte"
-                  icon="edit"
-                  size="1x"
-                /><span>Modifier</span>
-              </button>
-              <button>
-                <font-awesome-icon
-                  id="trashIcon"
-                  class="iconeCarte"
-                  icon="trash-alt"
-                  size="1x"
-                /><span>Supprimer</span>
-              </button>
-                </b-row> 
-              </b-col>
-              <b-col class="miniCarte m-2">
-                <b-row class="nomMiniCarte">
-                  <p>John Doe</p>  
-                </b-row>
-                <b-row class="institutionMiniCarte">
-                  <p>Cégep de Trois-Rivières</p>  
-                </b-row>
-                <b-row class="villeMiniCarte">
-                  <p>Shawinigan</p>
-                </b-row> 
-                <b-row class="bouttonMiniCarte">
-                  <button>
-                <font-awesome-icon
-                  id="editIcon"
-                  class="iconeCarte"
-                  icon="edit"
-                  size="1x"
-                /><span>Modifier</span>
-              </button>
-              <button>
-                <font-awesome-icon
-                  id="trashIcon"
-                  class="iconeCarte"
-                  icon="trash-alt"
-                  size="1x"
-                /><span>Supprimer</span>
-              </button>
-                </b-row> 
-              </b-col>
+              
             </b-row>
           </b-container>
         </b-col>
@@ -110,13 +54,19 @@
 <script>
 import SideNav from "../../layout/SideNav";
 import SmallTopNav from "../../layout/SmallTopNav";
+import json from "../../assets/data.json";
 export default {
   name: "ListeStages",
   components: {
     SideNav,
     SmallTopNav,
   },
-}
+  data: function() {
+      return {
+        stages: json.stages, // Passer les données JSON
+      };
+    } 
+  }
 </script>
 
 <style lang="scss">

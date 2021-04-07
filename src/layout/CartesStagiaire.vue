@@ -13,7 +13,9 @@
           <MiniCarteStagiaire />     
         <b-row>
           <b-col>
-            <button>Afficher d'autres offres</button>
+            <router-link to="/OffreCandidats">
+              <button>Afficher d'autres offres</button>
+            </router-link>  
           </b-col>
         </b-row>
       </div>

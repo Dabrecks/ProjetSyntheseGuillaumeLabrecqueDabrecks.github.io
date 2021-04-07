@@ -13,7 +13,9 @@
         <MiniCarteStage />
         <b-row>
           <b-col>
-            <button>Afficher d'autres offres</button>
+            <router-link to="/OffreStages">
+              <button>Afficher d'autres offres</button>
+            </router-link>
           </b-col>
         </b-row>
       </div>

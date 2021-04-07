@@ -7,34 +7,34 @@
         <b-row >
           <!-- section des deux petites cartes -->
           <b-col class="sectionStage" cols="8">
-            <div  v-for="(data,index) in stages" :key="index">
+            <div  v-for="(data,index) in candidats" :key="index">
             
-            <b-row v-if="staId == data.stageId" class="stage">
+            <b-row v-if="canId == data.candidatId" class="stage">
               <!-- <p>{{ $route.params.Sid }}</p> -->
               <b-col cols="4" class="logoStage text-left">
-                <h1 class="p-0">{{ data.entreprise }}</h1>
-                <p class="p-0">Département: <span>{{ data.poste }}</span></p>
-                <p class="p-0">Horaire: <span>{{ data.horaire }}</span></p>
+                <h1 class="p-0">{{ data.nom }}</h1>
+                <p class="p-0">Formation: <span>{{ data.formation }}</span></p>
+                <p class="p-0">Diplomé de: <span>{{ data.etablissement }}</span></p>
               </b-col>
               <b-col cols="8"  class="descriptionStage">
                 <b-row class="titreDescriptionStage text-left">
                   <div>
-                    <b-col cols="12 p-0">
-                        <h1>{{ data.ville }}</h1> <!--formulation pour présenter-->
+                    <b-col cols="12">
+                        <h1 class="p-0">{{ data.ville }}</h1> <!--formulation pour présenter-->
                     </b-col>
                   </div>
                 </b-row>
                 <b-row class="listeDescriptionStage mb-4">
                     <b-col cols="6" class="listeGauche text-left mt-3">
                         <ul>
-                            <li>Date de début <span>: {{ data.debut }}</span></li>
-                            <li>Date de fin <span>:  {{ data.debut }}</span></li>
+                            <li>Date de début: <span>{{ data.debut }}</span></li>
+                            <li>Date de fin: <span>{{ data.debut }}</span></li>
                         </ul>
                     </b-col>
                     <b-col cols="6" class="listeDroite text-right mt-3">
                         <ul>
-                            <li>Horaire <span>: {{ data.horaire }}</span></li>
-                            <li>Durée <span>: {{ data.duree }}</span></li>
+                            <li>Horaire: <span>{{ data.courriel }}</span></li>
+                            <li>Durée: <span>{{ data.telephone }}</span></li>
                         </ul>
                     </b-col>
                 </b-row>
@@ -139,7 +139,7 @@ import SectionPleineLargeurI from '../../layout/SectionPleineLargeurI'
 import CartesStage from '../../layout/CartesStage'
 import json from "../../assets/data.json";
 export default {
-  name: "Stage",
+  name: "Candidat",
   props:["infoStage"],
   components: {
     Footer,
@@ -150,8 +150,8 @@ export default {
   },
   data() {
     return {
-      staId: this.$route.params.Sid, // aller chercher l'id de la carte
-      stages: json.stages, // Aller chercher les données JSON
+      canId: this.$route.params.Cid, // aller chercher l'id de la carte
+      candidats: json.candidats, // Aller chercher les données JSON
       secteurs: [
         { domaine: "Administration publiques" },
         { domaine: "Agriculture, foresterie, pêche et chasse" },
@@ -195,8 +195,15 @@ export default {
           font-size: 1rem;
       }
     .stage {
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       .logoStage {
+        padding: 3% 2%;
+        p {
+            font-weight: bold;
+            span {
+                font-weight: 100;
+            }
+        }
       }
       .descriptionStage {
           padding: 3% 2%;
