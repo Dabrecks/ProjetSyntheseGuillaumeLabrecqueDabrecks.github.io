@@ -13,8 +13,8 @@
             </b-row>
             <b-row class="listMiniCartes">
               <b-col
-                v-for="stage in stages"
-                :key="stage.stageId"
+                v-for="stage,index in stages"
+                :key="index"
                 cols="4"
                 class="miniCarte"
               >
@@ -38,7 +38,9 @@
                       size="1x"
                     /><span>Modifier</span>
                   </button>
-                  <button>
+                  <button
+                    v-on:click="supprimer(index)"
+                  >
                     <font-awesome-icon
                       id="trashIcon"
                       class="iconeCarte"
@@ -76,6 +78,9 @@ export default {
     goTodetailStageAdmin(stagdId) {
       let staId = stagdId;
       this.$router.push({ name: "FicheStage", params: { Sid: staId } });
+    },
+    supprimer (index) {
+      this.$delete(this.stages, index)
     },
   },
 };

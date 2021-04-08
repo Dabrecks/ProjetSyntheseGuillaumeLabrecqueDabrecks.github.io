@@ -13,8 +13,8 @@
             </b-row>
             <b-row class="listMiniCartes">
               <b-col
-                v-for="candidat in candidats"
-                :key="candidat.candidatId"
+                v-for="candidat,index in candidats"
+                :key="index"
                 cols="4"
                 class="miniCarte "
               >
@@ -38,7 +38,9 @@
                       size="1x"
                     /><span>Modifier</span>
                   </button>
-                  <button>
+                  <button
+                    v-on:click="supprimer(index)"
+                  >
                     <font-awesome-icon
                       id="trashIcon"
                       class="iconeCarte"
@@ -76,6 +78,9 @@ export default {
     goTodetailCandidatAdmin(candId) {
       let canId = candId;
       this.$router.push({ name: "FicheCandidat", params: { Cid: canId } });
+    },
+    supprimer (index) {
+      this.$delete(this.candidats, index)
     },
   },
 };
