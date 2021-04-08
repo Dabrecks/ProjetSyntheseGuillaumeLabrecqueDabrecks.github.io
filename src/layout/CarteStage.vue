@@ -6,11 +6,7 @@
       :key="stage.stageId"
       class="carteSection text-left m-0 mb-4"
     >
-      <!-- AVEC CETTE VERSION DU BAS DU V-FOR, JE PEUX AVOIR MON id DANS MON URL -->
-      <!--<b-row
-      v-for="(data,index) in stages"
-      :key="index"
-      class="carteSection text-left m-0 mb-4"
+     
       > Changer le stage in stages pour stage in sortedStage -->
       <b-col cols="8">
         <h4 class="titreCarte">

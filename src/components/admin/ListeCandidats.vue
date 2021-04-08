@@ -12,35 +12,41 @@
               <h1>Liste des candidats</h1>
             </b-row>
             <b-row class="listMiniCartes">
-              
-              <b-col  v-for="candidat, index in candidats" :key="index" cols="4" class="miniCarte ">
+              <b-col
+                v-for="candidat in candidats"
+                :key="candidat.candidatId"
+                cols="4"
+                class="miniCarte "
+              >
                 <b-row class="nomMiniCarte">
-                  <p>{{ candidat.nom }}</p>  
+                  <p>{{ candidat.nom }}</p>
                 </b-row>
                 <b-row class="institutionMiniCarte">
-                  <p>{{ candidat.position }}</p>  
+                  <p>{{ candidat.position }}</p>
                 </b-row>
                 <b-row class="villeMiniCarte">
                   <p>{{ candidat.etablissement }}</p>
-                </b-row> 
+                </b-row>
                 <b-row class="bouttonMiniCarte">
+                  <button
+                    @click="goTodetailCandidatAdmin(candidat.candidatId)"
+                  >
+                    <font-awesome-icon
+                      id="editIcon"
+                      class="iconeCarte"
+                      icon="edit"
+                      size="1x"
+                    /><span>Modifier</span>
+                  </button>
                   <button>
-                <font-awesome-icon
-                  id="editIcon"
-                  class="iconeCarte"
-                  icon="edit"
-                  size="1x"
-                /><span>Modifier</span>
-              </button>
-              <button>
-                <font-awesome-icon
-                  id="trashIcon"
-                  class="iconeCarte"
-                  icon="trash-alt"
-                  size="1x"
-                /><span>Supprimer</span>
-              </button>
-                </b-row> 
+                    <font-awesome-icon
+                      id="trashIcon"
+                      class="iconeCarte"
+                      icon="trash-alt"
+                      size="1x"
+                    /><span>Supprimer</span>
+                  </button>
+                </b-row>
               </b-col>
             </b-row>
           </b-container>
@@ -60,12 +66,19 @@ export default {
     SideNav,
     SmallTopNav,
   },
-    data: function() {
-      return {
-        candidats: json.candidats, // Passer les données JSON
-      };
-    } 
-  }
+  data: function() {
+    return {
+      candidats: json.candidats, // Passer les données JSON
+    };
+  },
+  //Pour faire suivre les détails vers la fiche détaillé
+  methods: {
+    goTodetailCandidatAdmin(candId) {
+      let canId = candId;
+      this.$router.push({ name: "FicheCandidat", params: { Cid: canId } });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -79,13 +92,14 @@ export default {
     .nomMiniCarte {
       margin-top: 15px;
       p {
-      color: rgb(65, 65, 65);
-      font-size: 1.7rem;
-      font-weight: bold;
-      padding: 0;
+        color: rgb(65, 65, 65);
+        font-size: 1.7rem;
+        font-weight: bold;
+        padding: 0;
+      }
     }
-    }
-    .institutionMiniCarte, .villeMiniCarte {
+    .institutionMiniCarte,
+    .villeMiniCarte {
       p {
         color: blue;
         font-size: 1rem;
@@ -102,15 +116,15 @@ export default {
         margin: 12px 4px 20px 4px;
         border-radius: 5px;
         #editIcon {
-        color: green;
-        margin-right: 10px;
+          color: green;
+          margin-right: 10px;
         }
         #trashIcon {
           color: red;
-        margin-right: 10px;
+          margin-right: 10px;
         }
       }
     }
-  } 
+  }
 }
 </style>

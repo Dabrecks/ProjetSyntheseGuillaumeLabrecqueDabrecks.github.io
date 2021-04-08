@@ -9,7 +9,7 @@
           <SmallTopNav />
           <b-container fluid class="corp">
             <b-row class="titre mb-3 mt-5">
-              <h1>Fiche du candidat</h1>
+              <h1>Fiche de la compagnie</h1>
             </b-row>
             <!-- Boutton de retour -->
             <b-row class="bouttonRetour mb-4">
@@ -36,28 +36,28 @@
             </b-row>
             <hr id="hrBleu" />
             
-            <div  v-for="(data,index) in candidats" :key="index">
-              <div v-if="canId == data.candidatId">
+            <div  v-for="(data,index) in stages" :key="index">
+            <div v-if="staId == data.stageId">
 
             <b-row class="ligneNom">
               <font-awesome-icon
                 class="iconeCarte"
-                icon="user-graduate"
+                icon="user-tie"
                 size="3x"
               />
-              <b-card-text class="title  pb-0 mb-0">{{ data.nom }}</b-card-text>
+              <b-card-text class="title  pb-0 mb-0">{{ data.entreprise }}</b-card-text>
             </b-row>
             <hr id="hrNoir" />
             <b-row class="tableau mb-5">
               <b-col class="tableauGauche text-left" cols="5">
                 <b-row class="case">
-                  <p class="m-0">Nom et prénom du stagiaire :</p>
+                  <p class="m-0">Nom de l'entreprise :</p>
                 </b-row>
                 <b-row class="case">
-                  <p class="m-0">Établissement scolaire :</p>
+                  <p class="m-0">secteur :</p>
                 </b-row>
                 <b-row class="case">
-                  <p class="m-0">Programme de formation :</p>
+                  <p class="m-0">Poste :</p>
                 </b-row>
                 <b-row class="case">
                   <p class="m-0">Courriel :</p>
@@ -71,13 +71,13 @@
               </b-col>
               <b-col class="tableauDroite" cols="7">
                 <b-row class="case">
-                  <p class="m-0">{{ data.nom }}</p>
+                  <p class="m-0">{{ data.entreprise }}</p>
                 </b-row>
                 <b-row class="case">
-                  <p class="m-0">{{ data.etablissement }}</p>
+                  <p class="m-0">{{ data.secteur }}</p>
                 </b-row>
                 <b-row class="case">
-                  <p class="m-0">{{ data.formation }}</p>
+                  <p class="m-0">{{ data.poste }}</p>
                 </b-row>
                 <b-row class="case">
                   <p class="m-0">{{ data.courriel }}</p>
@@ -122,15 +122,15 @@ import SideNav from "../../layout/SideNav";
 import SmallTopNav from "../../layout/SmallTopNav";
 import json from "../../assets/data.json";
 export default {
-  name: "FicheCandidat",
+  name: "FicheStage",
   components: {
     SideNav,
     SmallTopNav,
   },
   data() {
     return {
-      canId: this.$route.params.Cid, // aller chercher l'id de la carte
-      candidats: json.candidats, // Aller chercher les données JSON
+      staId: this.$route.params.Sid, // aller chercher l'id de la carte
+      stages: json.stages, // Aller chercher les données JSON
 
     }
   }

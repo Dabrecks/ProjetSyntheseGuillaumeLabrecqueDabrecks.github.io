@@ -12,37 +12,42 @@
               <h1>Liste des candidats</h1>
             </b-row>
             <b-row class="listMiniCartes">
-              
-              <b-col v-for="stage, index in stages" :key="index" cols="4" class="miniCarte">
+              <b-col
+                v-for="stage in stages"
+                :key="stage.stageId"
+                cols="4"
+                class="miniCarte"
+              >
                 <b-row class="nomMiniCarte">
-                  <p>{{ stage.entreprise }}</p>  
+                  <p>{{ stage.entreprise }}</p>
                 </b-row>
                 <b-row class="institutionMiniCarte">
-                  <p>Cégep de Trois-Rivières</p>  
+                  <p>{{ stage.poste }}</p>
                 </b-row>
                 <b-row class="villeMiniCarte">
-                  <p>Shawinigan</p>
-                </b-row> 
+                  <p>{{ stage.ville }}</p>
+                </b-row>
                 <b-row class="bouttonMiniCarte">
+                  <button 
+                    @click="goTodetailStageAdmin(stage.stageId)"
+                  >
+                    <font-awesome-icon
+                      id="editIcon"
+                      class="iconeCarte"
+                      icon="edit"
+                      size="1x"
+                    /><span>Modifier</span>
+                  </button>
                   <button>
-                <font-awesome-icon
-                  id="editIcon"
-                  class="iconeCarte"
-                  icon="edit"
-                  size="1x"
-                /><span>Modifier</span>
-              </button>
-              <button>
-                <font-awesome-icon
-                  id="trashIcon"
-                  class="iconeCarte"
-                  icon="trash-alt"
-                  size="1x"
-                /><span>Supprimer</span>
-              </button>
-                </b-row> 
+                    <font-awesome-icon
+                      id="trashIcon"
+                      class="iconeCarte"
+                      icon="trash-alt"
+                      size="1x"
+                    /><span>Supprimer</span>
+                  </button>
+                </b-row>
               </b-col>
-              
             </b-row>
           </b-container>
         </b-col>
@@ -62,11 +67,18 @@ export default {
     SmallTopNav,
   },
   data: function() {
-      return {
-        stages: json.stages, // Passer les données JSON
-      };
-    } 
-  }
+    return {
+      stages: json.stages, // Passer les données JSON
+    };
+  },
+  //Pour faire suivre les détails vers la fiche détaillé
+  methods: {
+    goTodetailStageAdmin(stagdId) {
+      let staId = stagdId;
+      this.$router.push({ name: "FicheStage", params: { Sid: staId } });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -80,13 +92,14 @@ export default {
     .nomMiniCarte {
       margin-top: 15px;
       p {
-      color: rgb(65, 65, 65);
-      font-size: 1.7rem;
-      font-weight: bold;
-      padding: 0;
+        color: rgb(65, 65, 65);
+        font-size: 1.7rem;
+        font-weight: bold;
+        padding: 0;
+      }
     }
-    }
-    .institutionMiniCarte, .villeMiniCarte {
+    .institutionMiniCarte,
+    .villeMiniCarte {
       p {
         color: blue;
         font-size: 1rem;
@@ -103,15 +116,15 @@ export default {
         margin: 12px 4px 20px 4px;
         border-radius: 5px;
         #editIcon {
-        color: green;
-        margin-right: 10px;
+          color: green;
+          margin-right: 10px;
         }
         #trashIcon {
           color: red;
-        margin-right: 10px;
+          margin-right: 10px;
         }
       }
     }
-  } 
+  }
 }
 </style>

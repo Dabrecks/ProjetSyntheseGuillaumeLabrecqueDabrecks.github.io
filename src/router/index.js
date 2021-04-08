@@ -13,6 +13,7 @@ import Confidentialite from '../components/user/Confidentialite.vue'
 import Partenaires from '../components/user/Partenaires.vue'
 import DemandesStage from '../components/admin/DemandesStage.vue'
 import FicheCandidat from '../components/admin/FicheCandidat.vue'
+import FicheStage from '../components/admin/FicheStage.vue'
 import ListeCandidats from '../components/admin/ListeCandidats.vue'
 import ListeStages from '../components/admin/ListeStages.vue'
 import Validation from '../components/admin/Validation.vue'
@@ -82,9 +83,14 @@ const routes = [
     component: DemandesStage
   },
   {
-    path: '/FicheCandidat',
+    path: '/FicheCandidat/:Cid',
     name: 'FicheCandidat',
     component: FicheCandidat
+  },
+  {
+    path: '/FicheStage/:Sid',
+    name: 'FicheStage',
+    component: FicheStage
   },
   {
     path: '/ListeCandidats',
