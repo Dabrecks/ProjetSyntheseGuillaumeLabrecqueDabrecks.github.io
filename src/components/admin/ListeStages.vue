@@ -9,7 +9,7 @@
           <SmallTopNav />
           <b-container fluid class="corp">
             <b-row class="titre mb-3 mt-5">
-              <h1>Liste des candidats</h1>
+              <h1>Liste des entreprises</h1>
             </b-row>
             <b-row class="listMiniCartes">
               <b-col
@@ -80,7 +80,7 @@ export default {
       this.$router.push({ name: "FicheStage", params: { Sid: staId } });
     },
     supprimer (index) {
-      this.$delete(this.stages, index)
+      this.$delete(this.stages , index)
     },
   },
 };

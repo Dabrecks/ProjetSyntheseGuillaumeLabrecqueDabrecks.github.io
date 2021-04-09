@@ -1,6 +1,9 @@
 <template>
 <b-row>
-    <b-col cols="3" v-for="stage in activeStages" :key="stage.titre">
+    <b-col cols="3" 
+      v-for="stage in activeStages" 
+      :key="stage.stageId"
+    >
     <div class="sousCarte text-left">
       <b-card class="Card">
         <b-card-text class="cardTitle mb-0">
@@ -12,7 +15,12 @@
         <b-card-text>
           <span>{{ stage.description }}</span>
         </b-card-text>
-        <a href="#" class="cardLink mb-0">Détail</a>
+        <a
+          @click="goTodetail(stage.stageId)"
+          class="cardLink mb-0"
+        >
+          Détail
+        </a>
         <button class="bouttonCarte" href="#" variant="primary">
           Postuler
         </button>
@@ -30,6 +38,12 @@ export default {
     return {
       stages: json.stages, // aller chercher nos données du fichier JSON
     };
+  },
+  methods: {
+    goTodetail(stagId) {
+      let staId = stagId;
+      this.$router.push({ name: "Stage", params: { Sid: staId } });
+    },
   },
   computed: {
     activeStages: function() {
