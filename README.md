@@ -10,6 +10,9 @@ Ce projet utilise:
 * Bootstrap-Vue version: 2.21
 * SASS version: 10.1.1
 * FontAwesome version: 2.0
+
+## Statut du projet :alarm_clock:
+Quelques fonctions doivent encore être implantées (créer, modifier et identification)
 	
 ## Télécharger :running:
 Pour démarer le projet 
