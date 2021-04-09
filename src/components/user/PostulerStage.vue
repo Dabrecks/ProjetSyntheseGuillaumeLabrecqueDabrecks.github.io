@@ -65,7 +65,7 @@
 
       <b-row class="textCommuniquer text-left mb-3">
         <b-col>
-          <label for="textarea-default">Communiquer avec le candidat</label>
+          <label for="textarea-default">Communiquer avec l'entreprise'</label>
           <b-form-textarea
             id="textarea-default"
             rows="8"

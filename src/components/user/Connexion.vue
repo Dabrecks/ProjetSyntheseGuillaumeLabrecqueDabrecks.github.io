@@ -48,7 +48,13 @@
                       <b-form-checkbox value="me">Check me out</b-form-checkbox>
                     </b-form-checkbox-group> 
                   </b-form-group>-->
-                  <b-button type="submit" variant="primary" v-on:click="login()">Submit</b-button>
+                  <b-button 
+                      type="submit" 
+                      variant="primary" 
+                      v-on:click="login()"
+                  >
+                    Soumettre</b-button
+                  >
                 </b-form>
               </div>
             </b-row>
@@ -148,6 +154,14 @@
                         required
                       ></b-form-input>
                     </b-form-group>
+                    <!--Pour la fonction on:click du bas***** v-on:click="loginNew()" -->
+                    <b-button 
+                      type="submit" 
+                      variant="primary" 
+                      
+                  >
+                    Soumettre</b-button
+                  >
                   </b-form>
                 </div>
               </b-col>
@@ -264,6 +278,7 @@ export default {
       ],
       salaires: [
         { text: "Choisir", value: null },
+        "Bénévolat",
         "10$ à 15$/heure",
         "15$ à 20$/heure",
         "20$ à 25$/heure",
@@ -361,11 +376,14 @@ export default {
   }
   .centralText {
     background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     p {
       font-size: 1.5rem;
       color: whitesmoke;
       font-weight: bold;
-      padding: 21% 15%;
+      padding: 0% 15%;
       margin: 0;
     }
   }

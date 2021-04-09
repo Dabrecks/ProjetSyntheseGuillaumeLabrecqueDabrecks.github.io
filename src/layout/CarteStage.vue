@@ -6,8 +6,6 @@
       :key="stage.stageId"
       class="carteSection text-left m-0 mb-4"
     >
-     
-      > Changer le stage in stages pour stage in sortedStage -->
       <b-col cols="8">
         <h4 class="titreCarte">
           <!--*********Test pour voir si le fitre passe-->
@@ -73,11 +71,12 @@ export default {
         stagesToShow.filter(stage =>
         console.log(stage.poste.match(this.filtre))
       )
-
       }
-
       return stagesToShow;
     },
+  },
+};
+
     // stageFiltre: function(){
     //   return this.data.filter((stages)=>{
     //     console.log(stages.poste.match(this.filtre))
@@ -88,8 +87,6 @@ export default {
     // stageValide: function(){
     //   return this.stages.filter(stage => stage.valide)
     // }
-  },
-
   // StageToShow:function(){
   //  var stagesToShow = this.stages.filter(stage => stage .valide)
   //  if(this.filter){
@@ -99,7 +96,7 @@ export default {
   // return stageToShow;
 
   // }
-};
+
 </script>
 
 <style lang="scss">

@@ -11,7 +11,7 @@
       <b-row class="liste">
         <b-col class="p-1">
           <ul class="p-0">
-            <li>Graphic design</li>
+            <li><a>Graphic design</a></li>
             <li>Designer jobs</li>
             <li>Frontend Developer jobs</li>
             <li>Developer jobs</li>
