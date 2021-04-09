@@ -20,7 +20,11 @@
         >
           Détail
         </a>
-        <button class="bouttonCarte" href="#" variant="primary">
+        <button 
+          @click="goToMessage(candidat.candidatId)"
+          class="bouttonCarte" 
+          variant="primary"
+        >
           Postuler
         </button>
       </b-card>
@@ -43,6 +47,10 @@ export default {
       let canId = candId;
       this.$router.push({ name: "Candidat", params: { Cid: canId } });
     },
+    goToMessage(candId) {
+      let canId = candId;
+      this.$router.push({ name: "PostulerCandidat", params: { Cid: canId } });
+    }  
   },
   computed: {
     activeStagiaires: function() {

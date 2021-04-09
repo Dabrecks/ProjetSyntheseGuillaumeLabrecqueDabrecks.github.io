@@ -21,9 +21,12 @@
         >
           Détail
         </a>
-        <button class="bouttonCarte" href="#" variant="primary">
-          Postuler
-        </button>
+          <button 
+             @click="goToMessage(stage.stageId)"
+            class="bouttonCarte" 
+            variant="primary">
+            Postuler
+          </button>
       </b-card>
     </div>
   </b-col>
@@ -44,6 +47,10 @@ export default {
       let staId = stagId;
       this.$router.push({ name: "Stage", params: { Sid: staId } });
     },
+    goToMessage(stagId) {
+      let staId = stagId;
+      this.$router.push({ name: "PostulerStage", params: { Sid: staId } });
+    }  
   },
   computed: {
     activeStages: function() {

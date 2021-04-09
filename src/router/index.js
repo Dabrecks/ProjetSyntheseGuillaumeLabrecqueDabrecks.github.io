@@ -7,6 +7,8 @@ import OffreCandidats from '../components/user/OffreCandidats.vue'
 import OffreStages from '../components/user/OffreStages.vue'
 import Stage from '../components/user/Stage.vue'
 import Candidat from '../components/user/Candidat.vue'
+import PostulerCandidat from '../components/user/PostulerCandidat.vue'
+import PostulerStage from '../components/user/PostulerStage.vue'
 import Connexion from '../components/user/Connexion.vue'
 import Joindre from '../components/user/Joindre.vue'
 import Confidentialite from '../components/user/Confidentialite.vue'
@@ -56,6 +58,16 @@ const routes = [
     path: "/Candidat/:Cid",
     name: 'Candidat',
     component: Candidat
+  },
+  {
+    path: "/PostulerCandidat/:Cid",
+    name: 'PostulerCandidat',
+    component: PostulerCandidat
+  },
+  {
+    path: "/PostulerStage/:Sid",
+    name: 'PostulerStage',
+    component: PostulerStage
   },
   {
     path: '/Connexion',
