@@ -27,8 +27,10 @@
                 <b-button id="btnConnexion" class="bouton bg-white text-black"
                   >Connexion</b-button
                 >
-              </router-link>  
-              <b-button class="bouton text-black">Inscription</b-button>
+              </router-link> 
+              <router-link to="/Inscription"> 
+                <b-button class="bouton text-black">Inscription</b-button>
+              </router-link> 
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>

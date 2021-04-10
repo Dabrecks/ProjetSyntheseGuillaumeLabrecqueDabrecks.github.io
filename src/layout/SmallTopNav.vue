@@ -2,10 +2,14 @@
   <div class="">
     <b-row class="topNav">
       <b-col cols="3" class="buttonNavTop">
-        <button>Ajouter une offre de stage</button>
+        <router-link to="/AjoutStage">
+          <button>Ajouter une offre de stage</button>
+        </router-link> 
       </b-col>
       <b-col cols="3" class="buttonNavTop">
-        <button>Ajouter une demande de stage</button>
+        <router-link to="/AjoutCandidat">
+          <button>Ajouter une demande de stage</button>
+        </router-link> 
       </b-col>
       <b-col cols="4" class="profilNavTop text-right mr-5">
         <div cols="8" class="persone">

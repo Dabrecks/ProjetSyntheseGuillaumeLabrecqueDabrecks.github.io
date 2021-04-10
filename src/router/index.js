@@ -9,11 +9,14 @@ import Stage from '../components/user/Stage.vue'
 import Candidat from '../components/user/Candidat.vue'
 import PostulerCandidat from '../components/user/PostulerCandidat.vue'
 import PostulerStage from '../components/user/PostulerStage.vue'
+import Inscription from '../components/user/Inscription.vue'
 import Connexion from '../components/user/Connexion.vue'
 import Joindre from '../components/user/Joindre.vue'
 import Confidentialite from '../components/user/Confidentialite.vue'
 import Partenaires from '../components/user/Partenaires.vue'
 import DemandesStage from '../components/admin/DemandesStage.vue'
+import AjoutCandidat from '../components/admin/AjoutCandidat.vue'
+import AjoutStage from '../components/admin/AjoutStage.vue'
 import FicheCandidat from '../components/admin/FicheCandidat.vue'
 import FicheStage from '../components/admin/FicheStage.vue'
 import ListeCandidats from '../components/admin/ListeCandidats.vue'
@@ -70,6 +73,11 @@ const routes = [
     component: PostulerStage
   },
   {
+    path: "/Inscription",
+    name: 'Inscription',
+    component: Inscription
+  },
+  {
     path: '/Connexion',
     name: 'Connexion',
     component: Connexion
@@ -93,6 +101,16 @@ const routes = [
     path: '/DemandesStage',
     name: 'DemandesStage',
     component: DemandesStage
+  },
+  {
+    path: '/AjoutCandidat',
+    name: 'AjoutCandidat',
+    component: AjoutCandidat
+  },
+  {
+    path: '/AjoutStage',
+    name: 'AjoutStage',
+    component: AjoutStage
   },
   {
     path: '/FicheCandidat/:Cid',
