@@ -22,9 +22,10 @@
             </b-row>
             <!-- Section principale -->
             <b-row class="rowCartes">
+              <!-- Cartes candidat -->
               <b-col class="pl-0" cols="6">
                 <div v-for="candidat, index in candidatNonValide" :key="index"> 
-                  <b-card class="carteDemande"> <!--v-show="isShowing"-->
+                  <b-card class="carteDemande mb-4"> <!--v-show="isShowing"-->
                     <b-row>
                       <font-awesome-icon
                         class="iconeCarte"
@@ -49,11 +50,11 @@
                       <span>{{ candidat.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
-                      <b-col>
+                      <!-- <b-col>
                         <b-button class=" m-1" variant="primary"
                           >Primary</b-button
                         >
-                      </b-col>
+                      </b-col> -->
                       <b-col class="text-right"><!-- @click="isShowing = false"-->
                         <b-button v-on:click="supprimerCandidat(index)" class=" m-1" variant="danger"
                           >Supprimer</b-button
@@ -66,10 +67,10 @@
                   </b-card>
                 </div>
               </b-col>
-
+              <!-- Cartes entreprise -->
               <b-col cols="6">
                 <div v-for="stage, index in stageNonValide" :key="index">
-                  <b-card class="carteDemande">
+                  <b-card class="carteDemande mb-4">
                     <b-row>
                       <font-awesome-icon
                         class="iconeCarte"
@@ -94,11 +95,11 @@
                       <span>{{ stage.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
-                      <b-col>
+                      <!-- <b-col>
                         <b-button class=" m-1" variant="primary"
                           >Primary</b-button
                         >
-                      </b-col>
+                      </b-col> -->
                       <b-col class="text-right">
                         <!-- Pour supprimer -->
                         <b-button v-on:click="supprimerStage(index)" class=" m-1" variant="danger"

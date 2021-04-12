@@ -8,7 +8,7 @@
       </b-col>
       <b-col cols="3" class="buttonNavTop">
         <router-link to="/AjoutCandidat">
-          <button>Ajouter une demande de stage</button>
+          <button>Créer un profil candidat</button>
         </router-link> 
       </b-col>
       <b-col cols="4" class="profilNavTop text-right mr-5">

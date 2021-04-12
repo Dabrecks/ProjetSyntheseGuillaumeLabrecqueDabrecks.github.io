@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <b-container fluid>
       <b-row class="sideNav">
         <b-col cols="2" class="gauche">
@@ -9,89 +9,119 @@
           <SmallTopNav />
           <b-container fluid class="corp">
             <b-row class="titre mb-3 mt-5">
-              <h1>AjoutStage</h1>
+              <h1>Créer un stage</h1>
             </b-row>
-            <!-- <b-form @submit="onSubmit" v-if="show"> -->
-                <b-row class="formullaireAjout">
-                    <b-col cols="6" class="sectionGauche">
-                        <b-row class="nom">
-                            <b-col>
-                                <b-form-group label="Programme suivi:">
-                                    <b-form-input type="text"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="tel">
-                            <b-col>
-                                <b-form-group label="Numéro de téléphone:">
-                                    <b-form-input type="number"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="email">
-                            <b-col>
-                                <b-form-group label="Adresse Courriel:">
-                                    <b-form-input type="email"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="ville">
-                            <b-col>
-                                <b-form-group label="Ville: ">
-                                    <b-form-input type="text"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
+            <b-form @submit="createStage">
+              <b-row class="formullaireAjout">
+                <b-col cols="6" class="sectionGauche">
+                  <b-row class="nom">
+                    <b-col>
+                      <b-form-group label="Nom de l'entreprise:">
+                        <b-form-input v-model="entreprise" type="text" />
+                      </b-form-group>
                     </b-col>
-                    <b-col cols="6" class="sectionDroite">
-                        <b-row class="position">     
-                            <b-col>
-                                <b-form-group label="Programme: ">
-                                    <b-form-input type="text"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="ecole">
-                            <b-col>
-                                <b-form-group label="Établissement scolaire: ">
-                                    <b-form-input type="text"/>
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="formation">
-                            <b-col>
-                                <b-form-group label="Programme suivi">
-                                    <b-form-select :options="formation" class="pl-0"></b-form-select><!-- v-model="formationChoisie"  -->
-                                </b-form-group>
-                            </b-col>
-                        </b-row>
-                        <b-row class="date">
-                            <b-col cols="6">
-                                <div>
-                                    <b-form-group label="Date de début du stage">
-                                        <b-form-datepicker id="datepickerDebut" class="mb-2"></b-form-datepicker><!-- v-model="dateDebut" -->
-                                    </b-form-group>
-                                </div>
-                            </b-col>
-                            <b-col cols="6">
-                                <div>
-                                    <b-form-group label="Date de fin du stage">
-                                        <b-form-datepicker id="datepickerFin" class="mb-2"></b-form-datepicker><!-- v-model="dateFin" -->
-                                    </b-form-group>
-                                </div>
-                            </b-col>
-                        </b-row>
+                  </b-row>
+                  <b-row class="tel">
+                    <b-col>
+                      <b-form-group label="Numéro de téléphone:">
+                        <b-form-input v-model="telephone" type="number" />
+                      </b-form-group>
                     </b-col>
-                </b-row>
-                <b-row class="commentaire">
-                    <b-col cols="12">
-                        <b-form-group label="Décrivez-vous!">
-                        <b-form-textarea id="textarea-large" size="lg"></b-form-textarea>
+                  </b-row>
+                  <b-row class="email">
+                    <b-col>
+                      <b-form-group label="Adresse Courriel:">
+                        <b-form-input v-model="courriel" type="email" />
+                      </b-form-group>
+                    </b-col>
+                  </b-row>
+                  <b-row class="ville">
+                    <b-col>
+                      <b-form-group label="Ville: ">
+                        <b-form-input v-model="ville" courriel type="text" />
+                      </b-form-group>
+                    </b-col>
+                  </b-row>
+                </b-col>
+                <b-col cols="6" class="sectionDroite">
+                  <b-row class="position">
+                    <b-col>
+                      <b-form-group label="Titre du stage: ">
+                        <b-form-input v-model="poste" type="text" />
+                      </b-form-group>
+                    </b-col>
+                  </b-row>
+                  <b-row class="formation">
+                    <b-col>
+                      <b-form-group label="Secteur">
+                        <b-form-select
+                          v-model="secteur"
+                          :options="formation"
+                          class="pl-0"
+                        ></b-form-select
+                        ><!-- v-model="formationChoisie"  -->
+                      </b-form-group>
+                    </b-col>
+                  </b-row>
+                  <b-row class="date">
+                    <b-col cols="6">
+                      <div>
+                        <b-form-group label="Date de début du stage">
+                          <b-form-datepicker
+                            v-model="debut"
+                            id="datepickerDebut"
+                            class="mb-2"
+                          ></b-form-datepicker
+                          ><!-- v-model="dateDebut" -->
                         </b-form-group>
-                        <b-button type="submit" variant="primary">Soumettre</b-button>
+                        <b-form-checkbox
+                          id="remunere"
+                          v-model="paye"
+                          name="checkbox-1"
+                          value="true"
+                          unchecked-value="false"
+                        >
+                          Rémunéré
+                        </b-form-checkbox>
+                        <b-form-checkbox
+                          id="horaire"
+                          v-model="horaire"
+                          name="horaire"
+                          value="Temps partiel"
+                          unchecked-value="Temps plein"
+                        >
+                          Temps partiel
+                        </b-form-checkbox>
+                      </div>
                     </b-col>
-                </b-row>
-            <!-- </b-form> -->
+                    <b-col cols="6">
+                      <div>
+                        <b-form-group label="Date de fin du stage">
+                          <b-form-datepicker
+                            v-model="fin"
+                            id="datepickerFin"
+                            class="mb-2"
+                          ></b-form-datepicker
+                          ><!-- v-model="dateFin" -->
+                        </b-form-group>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+              <b-row class="commentaire">
+                <b-col cols="12">
+                  <b-form-group label="Décrivez-vous!">
+                    <b-form-textarea
+                      v-model="description"
+                      id="textarea-large"
+                      size="lg"
+                    ></b-form-textarea>
+                  </b-form-group>
+                  <b-button type="submit" variant="primary">Soumettre</b-button>
+                </b-col>
+              </b-row>
+            </b-form>
           </b-container>
         </b-col>
       </b-row>
@@ -103,21 +133,28 @@
 import SideNav from "../../layout/SideNav";
 import SmallTopNav from "../../layout/SmallTopNav";
 import json from "../../assets/data.json";
+import { v4 as uuidv4 } from 'uuid';
 export default {
-name: "AjoutStage",
-components: {
+  name: "AjoutStage",
+  components: {
     SideNav,
     SmallTopNav,
   },
   data: function() {
     return {
-        // form: {
-        //     dateDebut: "",
-        //     dateFin: "",
-        //     formationChoisie: "",
-        // },
-        
-        formation: [
+        entreprise: "",
+        telephone: "",
+        courriel: "",
+        ville: "",
+        poste: "",
+        secteur: "",
+        debut: "",
+        fin: "",
+        paye: false,
+        horaire: "",
+        description: "",
+
+      formation: [
         { text: "Choisir", value: null },
         "Administrations publiques",
         "Agriculture, foresterie, pêche et chasse",
@@ -143,23 +180,43 @@ components: {
         "Transport et entreposage",
         "Transport par camion",
       ],
-      show: true,
       stages: json.stages, // aller chercher nos données du fichier JSON
     };
-    },
-    // methods: {
-    //   onSubmit(event) {
-    //     event.preventDefault()
-    //     alert(JSON.stringify(this.form))
-    //   }
-    // },
-}
+  },
+//   Ajout
+  methods: {
+        createStage(e) {
+            e.preventDefault();
+            const newStage = {
+                stageId: uuidv4(),
+                entreprise: this.entreprise,
+                telephone: this.telephone,
+                courriel: this.courriel,
+                ville: this.ville,
+                poste: this.poste,
+                secteur: this.secteur,
+                debut: this.debut,
+                fin: this.fin,
+                paye: this.paye,
+                horaire: this.horaire,
+                description: this.description,
+                vedette: false,
+                valide: false,
+                visible: true,
+            }
+            console.log(newStage);
+        },
+        ajouterStage() {
+            this.stages = [...this.stages, this.newStage];
+        }
+    }
+};
 </script>
 
 <style lang="scss">
 .formullaireAjout {
-    p{
-        color: black;
-    }
+  p {
+    color: black;
+  }
 }
 </style>

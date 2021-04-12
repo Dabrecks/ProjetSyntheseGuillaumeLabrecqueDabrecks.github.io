@@ -10,12 +10,12 @@
         <router-link to="/">
           <a href="#"><font-awesome-icon class="iconeCarte" icon="home" size="lg"/><span>Accueil</span></a>
         </router-link> 
-        <router-link to="/DemandesStage">
+        <!-- <router-link to="/DemandesStage">
           <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-right" size="lg"/><span>Offres de stage</span></a>
         </router-link>  
           <router-link to="/FicheCandidat">
           <a href="#"><font-awesome-icon class="iconeCarte" icon="arrow-circle-left" size="lg"/><span>Demandes de stage</span></a>
-        </router-link>  
+        </router-link>   -->
           <router-link to="/ListeCandidats">
           <a href="#"><font-awesome-icon class="iconeCarte" icon="user-graduate" size="lg"/><span>Candidats</span></a>
         </router-link>  
