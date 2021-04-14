@@ -79,6 +79,15 @@ export default {
 </script>
 
 <style lang="scss">
+//mes variables scss
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 /*  bannière */
 .offreEmploi {
   margin-top: 30px;
@@ -92,7 +101,7 @@ export default {
 }
 .footerList {
   width: 100%;
-  background-color: rgb(243, 243, 243);
+  background-color: $grisArriereUn;
   p {
     padding: 2% 0 0 12%;
     margin-bottom: 0;
@@ -124,13 +133,14 @@ export default {
         float: right;
         a {
           display: block;
-          color: black;
+          color: $Noir;
           padding: 15px;
           text-decoration: none;
+          a:hover {
+          color:  $bleuPrimaire;
         }
-        a:hover {
-          color:  rgb(52, 70, 231);
         }
+        
       }
     }
   }

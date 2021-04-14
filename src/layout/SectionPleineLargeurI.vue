@@ -34,6 +34,11 @@ export default {
 </script>
 
 <style lang="scss">
+//mes variables
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$Blanc: #f8f8f8;
 .sectionCentre {
   overflow: hidden;
   .centralImg {
@@ -44,7 +49,7 @@ export default {
   }
   .centralText {
     width: 100%;
-    background-color: rgb(192, 192, 192);
+    background-color: $grisArriereUn;
     padding: 5% 3% 2% 6%;
     .centreListe {
       // padding-left: 3% !important;
@@ -59,8 +64,8 @@ export default {
     button {
       padding: 10px;
       border: none;
-      color: white;
-      background-color: rgb(0, 110, 255);
+      color: $Blanc;
+      background-color: $bleuPrimaire;
     }
   }
 }

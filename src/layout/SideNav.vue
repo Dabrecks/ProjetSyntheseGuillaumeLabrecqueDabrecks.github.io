@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row>
+    <b-row >
       <b-col cols="12" class="logoSideNav text-left">
         <img src="../assets/logoStage.png" alt="logoSideNav" />
       </b-col>
@@ -37,17 +37,24 @@ export default {
 </script>
 
 <style lang="scss">
-$bleuPrimaire:rgb(36, 122, 202);
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .sideNav {
   height: 100vh;
   p {
-    color: whitesmoke;
+    color: $Blanc;
     font-size: 1.3rem;
     padding-bottom: 20px;
     padding-left: 15px;
   }
   .gauche {
-    height: 100vh;
+    height: 100%;
     background-color: $bleuPrimaire;
     a {
       text-decoration: none;
@@ -63,10 +70,10 @@ $bleuPrimaire:rgb(36, 122, 202);
       flex-direction: column;
       a {
         padding: 15px 0px 15px 25px;
-        color: white;
+        color: $Blanc;
       }
       a:hover {
-        background-color: rgb(61, 143, 219);
+        background-color: $bleuSecondaire;
       }
       span {
         padding-left: 10px;

@@ -66,7 +66,7 @@
                           :options="formation"
                           class="pl-0"
                         ></b-form-select
-                        ><!-- v-model="formationChoisie"  -->
+                        >
                       </b-form-group>
                     </b-col>
                   </b-row>
@@ -79,7 +79,7 @@
                             id="datepickerDebut"
                             class="mb-2"
                           ></b-form-datepicker
-                          ><!-- v-model="dateDebut" -->
+                          >
                         </b-form-group>
                       </div>
                     </b-col>
@@ -91,7 +91,7 @@
                             id="datepickerFin"
                             class="mb-2"
                           ></b-form-datepicker
-                          ><!-- v-model="dateFin" -->
+                          >
                         </b-form-group>
                       </div>
                     </b-col>
@@ -122,10 +122,10 @@
 import SideNav from "../../layout/SideNav";
 import SmallTopNav from "../../layout/SmallTopNav";
 import json from "../../assets/data.json";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid"; //pour donner des Id aléatoir
 export default {
-name: "AjoutCandidat",
-components: {
+  name: "AjoutCandidat",
+  components: {
     SideNav,
     SmallTopNav,
   },
@@ -170,33 +170,33 @@ components: {
       candidats: json.candidats, // aller chercher nos données du fichier JSON
     };
   },
-    methods: {
-        createCandidat(e) {
-            e.preventDefault();
-            const newStage = {
-                candidatId: uuidv4(),
-                position: this.position,
-                nom: this.nom,
-                ville: this.ville,
-                etablissement: this.etablissement,
-                formation: this.formationSuivi,
-                debut: this.debut,
-                fin: this.fin,
-                courriel: this.courriel,
-                telephone: this.telephone,
-                description: this.description,
-                vedette: false,
-                valide: false,
-                visible: true,
-            }
-            console.log(newStage);
-        },
-        ajouterStage() {
-            this.stages = [...this.stages, this.newStage];
-        }
-    }
-}
+  // Créer un nouveau candidat
+  methods: {
+    createCandidat(e) {
+      e.preventDefault();
+      const newStage = {
+        candidatId: uuidv4(),
+        position: this.position,
+        nom: this.nom,
+        ville: this.ville,
+        etablissement: this.etablissement,
+        formation: this.formationSuivi,
+        debut: this.debut,
+        fin: this.fin,
+        courriel: this.courriel,
+        telephone: this.telephone,
+        description: this.description,
+        vedette: false,
+        valide: false,
+        visible: true,
+      };
+      console.log(newStage);
+    },
+    ajouterStage() {
+      this.stages = [...this.stages, this.newStage];
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

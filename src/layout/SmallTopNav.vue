@@ -35,6 +35,14 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .droite {
     height: 100vh;
     .topNav {
@@ -43,14 +51,14 @@ export default {
       display: flex;
       justify-content: start;
       align-items: center;
-      background-color: rgb(251, 251, 251);
+      background-color: $grisArriereUn;
       button {
         width: 100%;
         border: none;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: $BoxShadow;
         border-radius: 5px;
-        background-color: rgb(251, 251, 251);
-        color: rgb(36, 122, 202);
+        background-color: $Blanc;
+        color: $bleuPrimaire;
         padding: 5px 12px;
       }
       .profilNavTop {
@@ -58,11 +66,11 @@ export default {
         justify-content: flex-end;
         align-items: center;
         .nom {
-          color: black;
+          color: $Noir;
           font-size: 1rem;
         }
         .role {
-          color: rgb(129, 129, 129);
+          color: $grisArriereSombre;
           font-size: 0.8rem;
         }
         .profilPic {
@@ -70,14 +78,14 @@ export default {
           width: 45px;
           border-radius: 45px;
           margin-left: 15px;
-          background-color: rgb(82, 82, 82);
+          background-color: $grisArriereSombre;
         }
       }
         .iconsNavTop {
           padding: 0;
           .iconeCarte {
             margin: 0 10px;
-            color: rgb(173, 172, 172);
+            color: $grisArriereSombre;
           }
         }
     }

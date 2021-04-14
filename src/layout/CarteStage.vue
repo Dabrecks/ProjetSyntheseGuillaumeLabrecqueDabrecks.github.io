@@ -100,6 +100,12 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .listeCandidats {
   margin-bottom: 5%;
 }
@@ -108,16 +114,16 @@ export default {
   width: 100%;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $BoxShadow;
   .titreCarte {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 2px;
-    color: rgb(52, 52, 255);
+    color: $bleuPrimaire;
   }
   .lieuCarte {
     font-weight: bold;
-    color: black;
+    color: $Noir;
     margin-bottom: 2px;
   }
   .boutonCarte {

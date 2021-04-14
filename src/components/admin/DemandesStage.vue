@@ -1,3 +1,4 @@
+<!--Devrait être supprimé-->
 <template>
   <div>
     <b-container fluid>
@@ -94,11 +95,19 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .carteDemande {
   height: 355px;
   border: none;
-  background-color: rgb(219, 219, 219);
-  border-top: 4px solid rgb(36, 122, 202) !important;
+  background-color: $Blanc;
+  border-top: 4px solid $bleuPrimaire !important;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   .iconeCarte {
     margin: 0px 15px 0px 15px;

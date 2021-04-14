@@ -59,7 +59,7 @@
                           :options="formation"
                           class="pl-0"
                         ></b-form-select
-                        ><!-- v-model="formationChoisie"  -->
+                        >
                       </b-form-group>
                     </b-col>
                   </b-row>
@@ -72,7 +72,7 @@
                             id="datepickerDebut"
                             class="mb-2"
                           ></b-form-datepicker
-                          ><!-- v-model="dateDebut" -->
+                          >
                         </b-form-group>
                         <b-form-checkbox
                           id="remunere"

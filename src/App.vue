@@ -14,6 +14,7 @@
 }
 
 #nav {
+  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
   padding: 30px;
 
   a {

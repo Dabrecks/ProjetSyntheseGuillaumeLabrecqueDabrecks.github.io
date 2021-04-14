@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header titreHeader="À propos"/>
+    <Header titreHeader="À propos" />
     <!--Corp de la page  -->
     <div class="corp">
       <b-container fluid>
@@ -32,7 +32,9 @@
               class="mb-2"
             >
               <b-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
+                laudantium sint, et soluta sequi iusto est! Ab voluptate nemo
+                odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
@@ -47,7 +49,9 @@
               class="mb-2"
             >
               <b-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
+                laudantium sint, et soluta sequi iusto est! Ab voluptate nemo
+                odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
@@ -62,7 +66,9 @@
               class="mb-2"
             >
               <b-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At laudantium sint, et soluta sequi iusto est! Ab voluptate nemo odio explicabo recusandae.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
+                laudantium sint, et soluta sequi iusto est! Ab voluptate nemo
+                odio explicabo recusandae.
               </b-card-text>
             </b-card>
           </b-col>
@@ -72,7 +78,9 @@
       <b-container fluid class="descriptionSection">
         <b-row>
           <b-col class="descriptifBleu text-left">
-            <h4 class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+            <h4 class="mb-5">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </h4>
             <p class="mb-0">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ab
               in adipisci natus libero voluptatum animi neque aliquam delectus,
@@ -85,9 +93,12 @@
           </b-col>
         </b-row>
         <b-row>
-          <!-- align-v="center" -->
           <b-col class="descriptifImg p-0">
-            <b-img class="descriptifImg" src="https://picsum.photos/600/300/?image=25" alt="img"></b-img>
+            <b-img
+              class="descriptifImg"
+              src="https://picsum.photos/600/300/?image=25"
+              alt="img"
+            ></b-img>
           </b-col>
           <b-col class="descriptifGris text-left"
             ><p class="mb-0">
@@ -100,89 +111,89 @@
         </b-row>
       </b-container>
     </div>
-     <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-
-import Footer from '../../layout/Footer'
-import Header from '../../layout/Header'
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 export default {
   name: "Apropos",
-   components: {
+  components: {
     Footer,
-    Header
-  }
+    Header,
+  },
 };
 </script>
 
-<style  lang="scss">
+<style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 // Corps
 .corp {
   padding: 4% 6% 0 6%;
-}
-
-.introRow {
-  margin-bottom: 5%;
-}
-
-.intro {
-  margin: 1%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.introText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p {
-      font-weight: bold;
+  .introRow {
+    margin-bottom: 5%;
+    .intro {
+      margin: 1%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .introText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: bold;
+      }
+    }
+    // ici c'est le logo dans le corp de la page.
+    .logoImgBig {
+      height: 150px;
     }
   }
-// ici c'est le logo dans le corp de la page.
-.logoImgBig {
-  height: 150px;
 }
-
 .cardIntroRow {
   height: auto;
   margin-bottom: 5%;
-}
-
-.cardIntro {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border: none;
+  .cardIntro {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+  }
 }
 // section de description
 .descriptionSection {
   margin-bottom: 5%;
+  .descriptifBleu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: $bleuSecondaire;
+    padding: 100px 70px;
+    color: $Blanc;
+  }
+  .descriptifImg {
+    width: 100%;
+  }
+  .descriptifGris {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: $grisArriereSombre;
+    padding: 120px 30px !important;
+    color: $Blanc;
+  }
 }
-
-.descriptifBleu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  background-color: rgb(71, 71, 209);
-  padding: 100px 70px ;
-  color: white;
-}
-.descriptifImg {
-  width: 100%;
-}
-.descriptifGris {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  background-color: gray;
-  padding: 120px 30px !important;
-  color: white;
-}
-
 </style>

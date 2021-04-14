@@ -46,7 +46,7 @@
               <b-input-group>
                 <b-form-input v-model="search" placeholder="Mot clés"></b-form-input>
                 <b-input-group-append>
-                  <b-button @click="addFilter(search)" variant="info">Rechercher</b-button>
+                  <b-button @click="addFilter(search)" variant="primary">Rechercher</b-button>
                 </b-input-group-append>
               </b-input-group>
             </b-col>
@@ -85,7 +85,16 @@ export default {
 </script>
 
 <style lang="scss">
-    .header {
+//mes variables scss
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.header {
   width: 100%;
   height: fit-content;
   height: 50%;
@@ -94,45 +103,38 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 1% 6% 0 6%;
-}
-/* navigation */
-.navbar {
-  padding: 0 !important;
-}
-a.navbar-brand {
-  margin-right: 40px;
-}
-
-.logoImg {
-  height: 40px;
-}
-
-.bouton {
-  margin-right: 10px;
-  border: none !important;
-}
-#btnConnexion {
-  color: black;
-}
-/* centre */
-.centre {
-  height: 30vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.textCentre {
-  font-size: 2rem;
-}
-// titre
-.titre {
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-}
-
-.textTitre p{
-  font-size: 60px;
+  .navbar {
+    padding: 0 !important;
+    a.navbar-brand {
+      margin-right: 40px;
+    }
+    .logoImg {
+      height: 40px;
+    }
+    .bouton {
+      margin-right: 10px;
+      border: none !important;
+    }
+    #btnConnexion {
+      color: $Noir;
+    }
+  }
+  .centre {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .textCentre {
+      font-size: 2rem;
+    }
+  }
+  .titre {
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    .textTitre p{
+      font-size: 60px;
+    }
+  }
 }
 </style>

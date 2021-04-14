@@ -24,42 +24,48 @@
             <b-row class="rowCartes">
               <!-- Cartes candidat -->
               <b-col class="pl-0" cols="6">
-                <div v-for="candidat, index in candidatNonValide" :key="index"> 
-                  <b-card class="carteDemande mb-4"> <!--v-show="isShowing"-->
+                <div
+                  v-for="(candidat, index) in candidatNonValide"
+                  :key="index"
+                >
+                  <!--Loop dans mes candidats valides-->
+                  <b-card class="carteDemande mb-4">
                     <b-row>
                       <font-awesome-icon
                         class="iconeCarte"
                         icon="user-graduate"
                         size="3x"
                       />
-                      <b-card-text class="title pl-0 pb-0 mb-0"
-                        >{{ candidat.position }}</b-card-text
-                      >
+                      <b-card-text class="title pl-0 pb-0 mb-0">
+                        {{ candidat.position }}
+                      </b-card-text>
                     </b-row>
                     <hr />
-                    <b-card-text class="subTitle p-0 "
-                      >{{ candidat.nom }}</b-card-text
-                    >
+                    <b-card-text class="subTitle p-0">
+                      {{ candidat.nom }}
+                    </b-card-text>
                     <b-card-text class="carteVille p-0 mb-1">
                       Ville : <span>{{ candidat.ville }}</span>
                     </b-card-text>
                     <b-card-text class="carteLieu pl-0 mb-0">
-                      Établissement scolaire : <span>{{ candidat.etablissement }}</span>
+                      Établissement scolaire :
+                      <span>{{ candidat.etablissement }}</span>
                     </b-card-text>
                     <b-card-text class="carteDescription pl-0">
                       <span>{{ candidat.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
-                      <!-- <b-col>
-                        <b-button class=" m-1" variant="primary"
-                          >Primary</b-button
-                        >
-                      </b-col> -->
-                      <b-col class="text-right"><!-- @click="isShowing = false"-->
-                        <b-button v-on:click="supprimerCandidat(index)" class=" m-1" variant="danger"
+                      <b-col class="text-right">
+                        <b-button
+                          v-on:click="supprimerCandidat(index)"
+                          class="m-1"
+                          variant="danger"
                           >Supprimer</b-button
                         >
-                        <b-button v-on:click="candidat.valide = !candidat.valide" class=" m-1" variant="success"
+                        <b-button
+                          v-on:click="candidat.valide = !candidat.valide"
+                          class="m-1"
+                          variant="success"
                           >Valider</b-button
                         >
                       </b-col>
@@ -69,7 +75,7 @@
               </b-col>
               <!-- Cartes entreprise -->
               <b-col cols="6">
-                <div v-for="stage, index in stageNonValide" :key="index">
+                <div v-for="(stage, index) in stageNonValide" :key="index">
                   <b-card class="carteDemande mb-4">
                     <b-row>
                       <font-awesome-icon
@@ -77,14 +83,14 @@
                         icon="user-tie"
                         size="3x"
                       />
-                      <b-card-text class="title pl-0 pb-0 mb-0"
-                        >{{ stage.poste }}</b-card-text
-                      >
+                      <b-card-text class="title pl-0 pb-0 mb-0">
+                        {{stage.poste}}
+                      </b-card-text>
                     </b-row>
                     <hr />
-                    <b-card-text class="subTitle p-0 "
-                      >{{ stage.poste }}</b-card-text
-                    >
+                    <b-card-text class="subTitle p-0">
+                      {{stage.poste}}
+                    </b-card-text>
                     <b-card-text class="carteVille p-0 mb-1">
                       Ville : <span>{{ stage.ville }}</span>
                     </b-card-text>
@@ -95,18 +101,19 @@
                       <span>{{ stage.description }}</span>
                     </b-card-text>
                     <b-row align-h="between">
-                      <!-- <b-col>
-                        <b-button class=" m-1" variant="primary"
-                          >Primary</b-button
-                        >
-                      </b-col> -->
                       <b-col class="text-right">
                         <!-- Pour supprimer -->
-                        <b-button v-on:click="supprimerStage(index)" class=" m-1" variant="danger"
+                        <b-button
+                          v-on:click="supprimerStage(index)"
+                          class="m-1"
+                          variant="danger"
                           >Supprimer</b-button
                         >
                         <!-- Changer la valeur de valide -->
-                        <b-button v-on:click="stage.valide = !stage.valide" class=" m-1" variant="success"
+                        <b-button
+                          v-on:click="stage.valide = !stage.valide"
+                          class="m-1"
+                          variant="success"
                           >Valider</b-button
                         >
                       </b-col>
@@ -135,30 +142,30 @@ export default {
   data: function() {
     return {
       // Aller chercher les données pour candidats et stages
-      candidats: json.candidats, 
-      stages: json.stages, 
+      candidats: json.candidats,
+      stages: json.stages,
     };
   },
   // Pour supprimer le candidats
   methods: {
-    supprimerCandidat (index) {
-      this.$delete(this.candidats, index)
+    supprimerCandidat(index) {
+      this.$delete(this.candidats, index);
     },
     // Pour supprimer le stages
-    supprimerStage (index) {
-      this.$delete(this.stages, index)
-    }  
+    supprimerStage(index) {
+      this.$delete(this.stages, index);
+    },
   },
   // Aller chercher les candidats qui sont à valider
   computed: {
-    candidatNonValide: function(){
-      return this.candidats.filter(candidat => !candidat.valide)
+    candidatNonValide: function() {
+      return this.candidats.filter((candidat) => !candidat.valide);
     },
     // Aller chercher les stages qui sont à valider
-    stageNonValide: function(){
-      return this.stages.filter(stage => !stage.valide)
-    }
-  }
+    stageNonValide: function() {
+      return this.stages.filter((stage) => !stage.valide);
+    },
+  },
 };
 </script>
 

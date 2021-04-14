@@ -5,7 +5,6 @@
     <SectionPleineLargeur />
     <CartesStagiaire />
     <SectionPleineLargeurI />
-    <!-- https://image.freepik.com/free-vector/business-decisions-concept-illustration_114360-4096.jpg -->
     <Footer />
   </div>
 </template>

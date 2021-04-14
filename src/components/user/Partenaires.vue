@@ -67,12 +67,20 @@ name: "Partenaires",
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .partenaire {
   display: flex;
   justify-content: center;
   align-items: center;
   .cartePartenaire {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: $BoxShadow;
     .imgPartenaire img{
       width: 100%;
     }
@@ -91,14 +99,14 @@ name: "Partenaires",
 }
 .messagePartenaire {
   .messageMesPartenaire {
-    background-color: rgb(129, 129, 129);
+    background-color: $grisArriereSombre;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0 5%;
     p {
-      color: whitesmoke;
+      color: $Blanc;
       font-weight: bold;
     }
   }

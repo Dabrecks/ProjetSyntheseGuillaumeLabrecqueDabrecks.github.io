@@ -1,3 +1,5 @@
+<!--Cette page devrait être supprimer, mais j'ai trop peur que ça plante!--> 
+
 <template>
   <div>
     <Header />
@@ -112,7 +114,7 @@ export default {
   padding: 4% 6% 0 6%;
 }
 
-// * { outline: 1px red solid !important; visibility: visible !important }
+
 .listeCandidats {
   margin-bottom: 5%;
 }

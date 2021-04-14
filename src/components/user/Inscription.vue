@@ -139,6 +139,14 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .formulaire {
   .identification {
     // background-color: cyan;
@@ -160,13 +168,13 @@ export default {
     padding: 0;
   }
   .centralText {
-    background-color: grey;
+    background-color: $grisArriereSombre;
     display: flex;
     justify-content: center;
     align-items: center;
     p {
       font-size: 1.5rem;
-      color: whitesmoke;
+      color: $Blanc;
       font-weight: bold;
       padding: 0
       % 15%;

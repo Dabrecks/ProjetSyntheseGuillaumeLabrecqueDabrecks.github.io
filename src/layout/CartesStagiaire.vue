@@ -33,6 +33,15 @@ export default {
 </script>
 
 <style lang="scss">
+//mes variables
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 #miniCarte {
   margin: 5% 6%;
   padding: 0;
@@ -43,18 +52,18 @@ export default {
     border: none;
     margin-bottom: 4%;
     border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: $BoxShadow;
     .cardTitle {
       font-size: 1.5rem;
     }
     .cardSubtitle {
-      color: grey;
+      color: $grisArriereSombre;
     }
     .bouttonCarte {
       padding: 5px;
       border: none;
-      color: white;
-      background-color: blue;
+      color: $Blanc;
+      background-color: $bleuPrimaire;
       margin-left: 15px;
     }
   }
@@ -62,8 +71,8 @@ export default {
       margin: 3% 0 2% 0;
       padding: 5px 10px 5px 10px;
       border: none;
-      color: white;
-      background-color: rgb(255, 47, 28);
+      color: $Blanc;
+      background-color: $Rouge;
   }
 }
 </style>

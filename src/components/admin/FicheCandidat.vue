@@ -35,62 +35,63 @@
               </button>
             </b-row>
             <hr id="hrBleu" />
-            
-            <div  v-for="(data,index) in candidats" :key="index">
-              <div v-if="canId == data.candidatId">
 
-            <b-row class="ligneNom">
-              <font-awesome-icon
-                class="iconeCarte"
-                icon="user-graduate"
-                size="3x"
-              />
-              <b-card-text class="title  pb-0 mb-0">{{ data.nom }}</b-card-text>
-            </b-row>
-            <hr id="hrNoir" />
-            <b-row class="tableau mb-5">
-              <b-col class="tableauGauche text-left" cols="5">
-                <b-row class="case">
-                  <p class="m-0">Nom et prénom du stagiaire :</p>
+            <div v-for="(data, index) in candidats" :key="index">
+              <div v-if="canId == data.candidatId">
+                <b-row class="ligneNom">
+                  <font-awesome-icon
+                    class="iconeCarte"
+                    icon="user-graduate"
+                    size="3x"
+                  />
+                  <b-card-text class="title  pb-0 mb-0">{{
+                    data.nom
+                  }}</b-card-text>
                 </b-row>
-                <b-row class="case">
-                  <p class="m-0">Établissement scolaire :</p>
+                <hr id="hrNoir" />
+                <b-row class="tableau mb-5">
+                  <b-col class="tableauGauche text-left" cols="5">
+                    <b-row class="case">
+                      <p class="m-0">Nom et prénom du stagiaire :</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">Établissement scolaire :</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">Programme de formation :</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">Courriel :</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">Téléphone :</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">Ville :</p>
+                    </b-row>
+                  </b-col>
+                  <b-col class="tableauDroite" cols="7">
+                    <b-row class="case">
+                      <p class="m-0">{{ data.nom }}</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">{{ data.etablissement }}</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">{{ data.formation }}</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">{{ data.courriel }}</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">{{ data.telephone }}</p>
+                    </b-row>
+                    <b-row class="case">
+                      <p class="m-0">{{ data.ville }}</p>
+                    </b-row>
+                  </b-col>
                 </b-row>
-                <b-row class="case">
-                  <p class="m-0">Programme de formation :</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">Courriel :</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">Téléphone :</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">Ville :</p>
-                </b-row>
-              </b-col>
-              <b-col class="tableauDroite" cols="7">
-                <b-row class="case">
-                  <p class="m-0">{{ data.nom }}</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">{{ data.etablissement }}</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">{{ data.formation }}</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">{{ data.courriel }}</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">{{ data.telephone }}</p>
-                </b-row>
-                <b-row class="case">
-                  <p class="m-0">{{ data.ville }}</p>
-                </b-row>
-              </b-col>
-            </b-row>
-            </div>
+              </div>
             </div>
 
             <b-row class="textCommuniquer mb-3">
@@ -106,9 +107,9 @@
               </b-col>
             </b-row>
             <b-row>
-                <b-col class="bouttonEnvoyer text-right">
-                    <b-button variant="primary">Envoyer</b-button>
-                </b-col>
+              <b-col class="bouttonEnvoyer text-right">
+                <b-button variant="primary">Envoyer</b-button>
+              </b-col>
             </b-row>
           </b-container>
         </b-col>
@@ -131,13 +132,20 @@ export default {
     return {
       canId: this.$route.params.Cid, // aller chercher l'id de la carte
       candidats: json.candidats, // Aller chercher les données JSON
-
-    }
-  }
+    };
+  },
 };
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .corp {
   // background-color: pink;
   h1 {
@@ -150,8 +158,8 @@ export default {
       border: none;
       padding: 5px;
       border-radius: 5px;
-      background-color: grey;
-      color: white;
+      background-color: $grisArriereSombre;
+      color: $Blanc;
     }
   }
   .bouttonAction {
@@ -159,9 +167,9 @@ export default {
     justify-content: flex-end;
     padding: 0 15px;
     button {
-      background-color: rgb(255, 255, 255);
+      background-color: $Blanc;
       border: none;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      box-shadow: $BoxShadow;
       padding: 5px 8px;
       margin-left: 8px;
       border-radius: 5px;
@@ -169,7 +177,7 @@ export default {
         color: green;
       }
       #trashIcon {
-        color: red;
+        color: $Rouge;
       }
     }
   }
@@ -177,27 +185,26 @@ export default {
     padding-left: 15px;
   }
   .title {
-    color: black;
+    color: $Noir;
     font-size: 1.8rem;
     font-weight: bold;
   }
   #hrNoir {
-    border: 1px solid black;
+    border: 1px solid $Noir;
     margin: 0 0 16px 0;
     padding: 0 -5px;
     width: 100%;
   }
   #hrBleu {
-    border: 3px solid rgb(47, 50, 182);
+    border: 3px solid $bleuPrimaire;
   }
   .tableau {
     margin: 0;
-    background-color: white;
-    border: 1px solid grey;
+    background-color: $Blanc;
+    border: 1px solid $grisArriereSombre;
     .tableauGauche {
-      //   background-color: green;
       .case {
-        border: 1px solid grey;
+        border: 1px solid $grisArriereSombre;
       }
       p {
         color: black;
@@ -207,16 +214,16 @@ export default {
     }
     .tableauDroite {
       .case {
-        border: 1px solid grey;
+        border: 1px solid $grisArriereSombre;
       }
       p {
-        color: rgb(105, 105, 105);
+        color: $grisArriereSombre;
         padding: 12px 0 12px 7px;
       }
     }
   }
-      .bouttonEnvoyer {
-          margin-bottom: 150px;
-      }
+  .bouttonEnvoyer {
+    margin-bottom: 150px;
+  }
 }
 </style>

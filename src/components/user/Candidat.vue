@@ -4,47 +4,59 @@
     <!-- corp de la page -->
     <div class="corp">
       <b-container fluid class="listeStage">
-        <b-row >
+        <b-row>
           <!-- section des deux petites cartes -->
           <b-col class="sectionStage" cols="8">
-            <div  v-for="(data,index) in candidats" :key="index">
-            
-            <b-row v-if="canId == data.candidatId" class="stage">
-              <!-- <p>{{ $route.params.Sid }}</p> -->
-              <b-col cols="4" class="logoStage text-left">
-                <h1 class="p-0">{{ data.nom }}</h1>
-                <p class="p-0">Formation: <span>{{ data.formation }}</span></p>
-                <p class="p-0">Diplomé de: <span>{{ data.etablissement }}</span></p>
-              </b-col>
-              <b-col cols="8"  class="descriptionStage">
-                <b-row class="titreDescriptionStage text-left">
-                  <div>
-                    <b-col cols="12">
-                        <h1 class="p-0">{{ data.ville }}</h1> <!--formulation pour présenter-->
-                    </b-col>
-                  </div>
-                </b-row>
-                <b-row class="listeDescriptionStage mb-4">
+            <div v-for="(data, index) in candidats" :key="index">
+              <b-row v-if="canId == data.candidatId" class="stage">
+                <!-- <p>{{ $route.params.Sid }}</p> -->
+                <b-col cols="4" class="logoStage text-left">
+                  <h1 class="p-0">{{ data.nom }}</h1>
+                  <p class="p-0">
+                    Formation: <span>{{ data.formation }}</span>
+                  </p>
+                  <p class="p-0">
+                    Diplomé de: <span>{{ data.etablissement }}</span>
+                  </p>
+                </b-col>
+                <b-col cols="8" class="descriptionStage">
+                  <b-row class="titreDescriptionStage text-left">
+                    <div>
+                      <b-col cols="12">
+                        <h1 class="p-0">{{ data.ville }}</h1>
+                        <!--formulation pour présenter-->
+                      </b-col>
+                    </div>
+                  </b-row>
+                  <b-row class="listeDescriptionStage mb-4">
                     <b-col cols="6" class="listeGauche text-left mt-3">
-                        <ul>
-                            <li>Date de début: <span>{{ data.debut }}</span></li>
-                            <li>Date de fin: <span>{{ data.debut }}</span></li>
-                        </ul>
+                      <ul>
+                        <li>
+                          Date de début: <span>{{ data.debut }}</span>
+                        </li>
+                        <li>
+                          Date de fin: <span>{{ data.debut }}</span>
+                        </li>
+                      </ul>
                     </b-col>
                     <b-col cols="6" class="listeDroite text-right mt-3">
-                        <ul>
-                            <li>Horaire: <span>{{ data.courriel }}</span></li>
-                            <li>Durée: <span>{{ data.telephone }}</span></li>
-                        </ul>
+                      <ul>
+                        <li>
+                          Horaire: <span>{{ data.courriel }}</span>
+                        </li>
+                        <li>
+                          Durée: <span>{{ data.telephone }}</span>
+                        </li>
+                      </ul>
                     </b-col>
-                </b-row>
-                <b-row class="boutonDescriptifStage">
+                  </b-row>
+                  <b-row class="boutonDescriptifStage">
                     <b-col cols="12">
-                    <button><p>Contacter le candidat</p></button>
+                      <button><p>Contacter le candidat</p></button>
                     </b-col>
-                </b-row>
-              </b-col>
-            </b-row>
+                  </b-row>
+                </b-col>
+              </b-row>
             </div>
 
             <!-- Le texte descriptif  -->
@@ -59,7 +71,7 @@
                 Aenean faucibus est lectus, elementum pellentesque nisi cursus
                 at. Maecenas nec elementum enim, vel egestas nisi.
               </p>
-              <p class="descriptifTexteStage" >
+              <p class="descriptifTexteStage">
                 Nam quis laoreet turpis. Mauris placerat euismod lectus, quis
                 laoreet libero commodo vel. Nullam metus ipsum, pulvinar a nulla
                 nec, tristique scelerisque libero. Pellentesque turpis libero,
@@ -77,7 +89,7 @@
                 Aenean faucibus est lectus, elementum pellentesque nisi cursus
                 at. Maecenas nec elementum enim, vel egestas nisi.
               </p>
-              <p class="descriptifTexteStage" >
+              <p class="descriptifTexteStage">
                 Nam quis laoreet turpis. Mauris placerat euismod lectus, quis
                 laoreet libero commodo vel. Nullam metus ipsum, pulvinar a nulla
                 nec, tristique scelerisque libero. Pellentesque turpis libero,
@@ -95,7 +107,7 @@
                 Aenean faucibus est lectus, elementum pellentesque nisi cursus
                 at. Maecenas nec elementum enim, vel egestas nisi.
               </p>
-              <p class="descriptifTexteStage" >
+              <p class="descriptifTexteStage">
                 Nam quis laoreet turpis. Mauris placerat euismod lectus, quis
                 laoreet libero commodo vel. Nullam metus ipsum, pulvinar a nulla
                 nec, tristique scelerisque libero. Pellentesque turpis libero,
@@ -122,25 +134,25 @@
     </div>
     <SectionPleineLargeur />
     <b-container fluid>
-        <!-- SECTION 3 Retour avec le padding régulier -->
-    <CartesStage />
+      <!-- SECTION 3 Retour avec le padding régulier -->
+      <CartesStage />
     </b-container>
-        <!-- SECTION 4 Section du centre avec une full width -->
+    <!-- SECTION 4 Section du centre avec une full width -->
     <SectionPleineLargeurI />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from '../../layout/Footer'
-import Header from '../../layout/Header'
-import SectionPleineLargeur from '../../layout/SectionPleineLargeur'
-import SectionPleineLargeurI from '../../layout/SectionPleineLargeurI'
-import CartesStage from '../../layout/CartesStage'
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
+import SectionPleineLargeur from "../../layout/SectionPleineLargeur";
+import SectionPleineLargeurI from "../../layout/SectionPleineLargeurI";
+import CartesStage from "../../layout/CartesStage";
 import json from "../../assets/data.json";
 export default {
   name: "Candidat",
-  props:["infoStage"],
+  props: ["infoStage"],
   components: {
     Footer,
     Header,
@@ -185,54 +197,62 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .listeStage {
-    margin-bottom: 5%;
-      .titreTexteStage {
-          font-size: 1.4rem;
-          font-weight: bold;
-      }
-      .descriptifTexteStage {
-          font-size: 1rem;
-      }
-    .stage {
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-      .logoStage {
-        padding: 3% 2%;
-        p {
-            font-weight: bold;
-            span {
-                font-weight: 100;
-            }
+  margin-bottom: 5%;
+  .titreTexteStage {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .descriptifTexteStage {
+    font-size: 1rem;
+  }
+  .stage {
+    box-shadow: $BoxShadow;
+    .logoStage {
+      padding: 3% 2%;
+      p {
+        font-weight: bold;
+        span {
+          font-weight: 100;
         }
       }
-      .descriptionStage {
-          padding: 3% 2%;
-          .titreDescriptionStage h1{
-              font-size: 1.7rem;
-              font-weight: bold;
-          }
-          .listeDescriptionStage ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            li {
-                font-weight: bold;
-                span {
-                    font-weight: 100;
-                }
-            }
-          }
-          .boutonDescriptifStage button{
-            background-image: linear-gradient(to right, rgb(35, 55, 233) , rgb(86, 8, 175)); 
-            width: 100%;
-            border: none;
-            padding: 7px;
-            p {
-                margin: 0;
-                color: whitesmoke;
-            }
-          }
+    }
+    .descriptionStage {
+      padding: 3% 2%;
+      .titreDescriptionStage h1 {
+        font-size: 1.7rem;
+        font-weight: bold;
       }
+      .listeDescriptionStage ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          font-weight: bold;
+          span {
+            font-weight: 100;
+          }
+        }
+      }
+      .boutonDescriptifStage button {
+        background-color: $bleuPrimaire;
+        width: 100%;
+        border: none;
+        padding: 7px;
+        p {
+          margin: 0;
+          color: $Blanc;
+        }
+      }
+    }
   }
 }
 </style>

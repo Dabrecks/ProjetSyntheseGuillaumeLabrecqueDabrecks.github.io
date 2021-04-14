@@ -94,6 +94,14 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .corp {
   padding: 4% 6% 0 6%;
 }
@@ -104,9 +112,9 @@ export default {
 }
 
 table {
-  background-color: rgb(243, 243, 243);
+  background-color: $Blanc;
   .titreTableau {
-    background-color: rgb(255, 255, 255);
+    background-color: $Blanc;
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -116,31 +124,5 @@ table {
   }
 }
 
-#miniCarte {
-  margin: 5% 6%;
-  padding: 0;
-  .sectionSousCarte {
-    margin-bottom: 5%;
-  }
-  .sousCarte {
-    border: none;
-    margin-bottom: 4%;
-    border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    .bouttonCarte {
-      padding: 5px;
-      border: none;
-      color: white;
-      background-color: blue;
-      margin-left: 15px;
-    }
-  }
-  button {
-    margin: 3% 0 2% 0;
-    padding: 5px 10px 5px 10px;
-    border: none;
-    color: white;
-    background-color: rgb(255, 47, 28);
-  }
-}
+
 </style>

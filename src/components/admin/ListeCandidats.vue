@@ -87,17 +87,25 @@ export default {
 </script>
 
 <style lang="scss">
+$bleuPrimaire: #0d6efd; //bleu officiel de bootstrap
+$bleuSecondaire: #5297ff;
+$grisArriereUn: #bdbdbd;
+$grisArriereSombre: #7a7a7a;
+$Blanc: #f8f8f8;
+$Noir: #0c0c0c;
+$Rouge: #e93939;
+$BoxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .listMiniCartes {
   .miniCarte {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: $BoxShadow;
     .nomMiniCarte {
       margin-top: 15px;
       p {
-        color: rgb(65, 65, 65);
+        color: $grisArriereSombre;
         font-size: 1.7rem;
         font-weight: bold;
         padding: 0;
@@ -106,7 +114,7 @@ export default {
     .institutionMiniCarte,
     .villeMiniCarte {
       p {
-        color: blue;
+        color: $bleuPrimaire;
         font-size: 1rem;
         padding: 0;
         margin-bottom: 2px;
@@ -114,9 +122,9 @@ export default {
     }
     .bouttonMiniCarte {
       button {
-        background-color: rgb(255, 255, 255);
+        background-color: $Blanc;
         border: none;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: $BoxShadow;
         padding: 5px 8px;
         margin: 12px 4px 20px 4px;
         border-radius: 5px;
@@ -125,7 +133,7 @@ export default {
           margin-right: 10px;
         }
         #trashIcon {
-          color: red;
+          color: $Rouge;
           margin-right: 10px;
         }
       }
